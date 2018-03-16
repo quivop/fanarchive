@@ -19,7 +19,7 @@
   - [x] default install db
   - [ ] default site settings
   - [ ] initial db migration
-- [ ] initialize FanArchive app in Django
+- [x] initialize FanArchive app in Django
 - [ ] set Jinja2 as templating engine
 
 ### Branch setup
