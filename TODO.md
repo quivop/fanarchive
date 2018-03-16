@@ -8,8 +8,10 @@
   - [ ] details about what we're planning to do
   - [ ] links to important info
 - [ ] get the wiki started with:
-  - [ ] the 0.1.0 spec
+  - [x] the 0.1.0 spec
   - [ ] barebones installation instructions for people wanting to run/test the software
+    - [ ] on windows
+    - [ ] on mac
 
 ### Test stack
 - [ ] add Django 2.0 barebones install
