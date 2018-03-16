@@ -14,7 +14,9 @@
     - [ ] on mac
 
 ### Test stack
-- [ ] add Django 2.0 barebones install
+- [ ] add and configure Django 2.0 barebones install
+  - [x] default install files
+  - [x] default install db
   - [ ] default site settings
   - [ ] initial db migration
 - [ ] initialize FanArchive app in Django
