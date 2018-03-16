@@ -108,7 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# Changed time zone to Pacific for kicks
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
