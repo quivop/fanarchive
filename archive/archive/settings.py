@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
-    'fanarchive.apps.FanarchiveConfig'
+    'fanarchive.apps.FanarchiveConfig',
+    # Registering django-jinja app
+    'django_jinja',
 ]
 
 MIDDLEWARE = [
@@ -54,17 +56,31 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'archive.urls'
 
 TEMPLATES = [
+    # Added django_jinja template settings
+    {
+        "BACKEND": "django_jinja.backend.Jinja2",
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "match_extension": ".jinja",
+            # Added constants for testing
+            "constants": {
+                "hello": "hell world",
+                "hello_title": "HELL",
+            }
+        }
+    },
+    # Django template engine's default settings
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+           ],
         },
     },
 ]

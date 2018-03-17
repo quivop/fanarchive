@@ -17,12 +17,12 @@
 - [ ] add and configure Django 2.0 barebones install
   - [x] default install files
   - [x] default install db
-  - [ ] default site settings
+  - [x] default site settings
   - [ ] initial db migration
 - [x] initialize FanArchive app in Django
-- [ ] set Jinja2 as templating engine
-  - [ ] install django_jinja to make it go
-  - [ ] change settings.py accordingly
+- [x] set Jinja2 as templating engine
+  - [x] install django_jinja to make it go
+  - [x] change settings.py accordingly
 
 ### Branch setup
 - [ ] frontend branch for HTML/CSS contributors
