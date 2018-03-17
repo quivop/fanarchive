@@ -5,4 +5,5 @@ from django.http import HttpResponse
 
 # super-simple index page
 def index(request):
-	return HttpResponse("Hello, cruel fanfic world. You are at the fanarchive index.")
+	# now with Jinja2~
+	return render(request, 'fanarchive/index.jinja')
