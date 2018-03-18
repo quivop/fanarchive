@@ -18,7 +18,9 @@
   - [x] default install files
   - [x] default install db
   - [x] default site settings
-  - [ ] initial db migration
+  - [ ] initial db migration files
+    - [ ] default model migration file
+    - [ ] data fixture to plug into default models 
 - [x] initialize FanArchive app in Django
 - [x] set Jinja2 as templating engine
   - [x] install django_jinja to make it go
