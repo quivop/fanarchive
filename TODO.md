@@ -27,5 +27,4 @@
   - [x] change settings.py accordingly
 
 ### Branch setup
-- [ ] frontend branch for HTML/CSS contributors
-- [ ] backend branch for Django fiddlers
+- [ ] development branch
