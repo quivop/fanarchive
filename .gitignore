@@ -102,3 +102,6 @@ ENV/
 
 # Make sure development dbs are ignored
 .sqlite3
+
+# Ignoring db.sqlite3 in particular
+db.sqlite3
