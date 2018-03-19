@@ -10,17 +10,17 @@
 - [ ] get the wiki started with:
   - [x] the 0.1.0 spec
   - [ ] barebones installation instructions for people wanting to run/test the software
-    - [ ] on windows
+    - [x] on windows
     - [ ] on mac
 
 ### Test stack
-- [ ] add and configure Django 2.0 barebones install
+- [x] add and configure Django 2.0 barebones install
   - [x] default install files
   - [x] default install db
   - [x] default site settings
-  - [ ] initial db migration files
-    - [ ] default model migration file
-    - [ ] data fixture to plug into default models 
+  - [x] initial db migration files
+    - [x] default model migration file
+    - [x] data fixture to plug into default models 
 - [x] initialize FanArchive app in Django
 - [x] set Jinja2 as templating engine
   - [x] install django_jinja to make it go
