@@ -15,9 +15,17 @@
   <div class="container">
 
     <main>
-      <p>Hello, cruel fanarchive world. From a JINJA template this time.</p>
+      <p>Welcome to the FAN ARCHIVE.</p>
+      {% if latest_work_list %}
+      <ul>
+        {% for work in latest_work_list %}
+        <li><a href="/fanarchive/{{ work.id }}/">{{ work.work_title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No works are available <strong>:sadface:</strong>.</p>
+      {% endif %}
 
-      <p>CONSTANT TIME: {{ hello }}</p>
 
     </main>
 
