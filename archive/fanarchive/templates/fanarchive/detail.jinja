@@ -5,7 +5,8 @@
   <head>
 
     <meta charset="utf-8">
-    <title>{{ hello_title }}</title>
+    <!-- titlecase for the page title just cuz -->
+    <title>{{ work.work_title|title }}</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
 
   </head>
@@ -15,8 +16,25 @@
   <div class="container">
 
     <main>
-      <p>You're looking at work {{ work }}.</p>
+      <!-- but no titlecase here -->
+      <h1>{{ work.work_title }}</h1>
+      
+      <p><strong>Work summary:</strong> {{ work.work_summary }}</p>
 
+      <p><strong>Work created on:</strong> {{ work.date_created }}</p>
+
+      <!-- if the Work has any WorkParts -->
+      {% if work.workpart_set.count() > 0 %}
+      <ul>
+        <!-- list them -->
+        {% for workpart in work.workpart_set.all() %}
+        <li>{{ workpart.work_part_title }}</li>
+        {% endfor %}
+      </ul>
+      <!-- else, give the user a sad message -->
+      {% else %}
+      <p>I'm sorry, <strong>{{ work.work_title }}</strong> has no work parts available.</p>
+      {% endif %}
 
     </main>
 

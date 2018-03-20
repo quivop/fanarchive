@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # import to enable DYNAMIC NEW index page
-from .models import Work
+from .models import Work, WorkPart
 
 # importing get_object_or_404 shortcut function
 from django.shortcuts import get_object_or_404
@@ -20,7 +20,7 @@ def index(request):
 	# render latest works using index.jinja template and the latest_work_list variable
 	return render(request, 'fanarchive/index.jinja', the_works)
 
-# templated detail page
+# DYNAMIC detail page
 def detail(request, work_id):
 	# which will give you a 404 if the work you're trying to look up doesn't exist
 	work = get_object_or_404(Work, pk=work_id)
