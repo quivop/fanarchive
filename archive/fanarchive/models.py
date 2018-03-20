@@ -2,7 +2,7 @@ from django.db import models
 
 # Work model
 
-class Work(models.model):
+class Work(models.Model):
 	# work title CharField with generous length allowance
 	work_title = models.CharField('work title', max_length=200)
 	# work summary TextField with max-length enforced only at view level, not on db or in the model
@@ -16,7 +16,7 @@ class Work(models.model):
 
 # WorkPart model
 
-class WorkPart(models.model):
+class WorkPart(models.Model):
 	# work part title CharField with generous length allowance
 	work_part_title = models.CharField('work part title', max_length=200)
 	# work part text TextField
