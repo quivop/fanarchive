@@ -105,3 +105,6 @@ ENV/
 
 # Ignoring db.sqlite3 in particular
 db.sqlite3
+
+# Ignore test data dumps
+dump*.json
