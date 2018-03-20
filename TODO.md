@@ -1,5 +1,15 @@
 # To Do
 
+
+## Development
+
+### Models
+- [ ] `Work` model
+  - declared fields: `work_title`, `work_summary`, `date_created`
+- [ ] `WorkPart` model
+  - declared fields: `related_work`, `work_part_text`
+
+
 ## Initializing the repo
 
 ### Text and documentation
