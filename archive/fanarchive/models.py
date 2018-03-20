@@ -13,3 +13,15 @@ class Work(models.model):
 	def __str__(self):
 		# returning a nice, human-readable representation of the model when called by __str__() method
 		return self.work_title
+
+# WorkPart model
+
+class WorkPart(models.model):
+	# work part title CharField with generous length allowance
+	work_part_title = models.CharField('work part title', max_length=200)
+	# work part text TextField
+	work_part_text = models.TextField('work part text')
+
+	# Foreign key relating each WorkPart to one Work.
+	# One WorkPart can have many Works, but a WorkPart can only have one Work
+	work = models.ForeignKey(Work, on_delete=models.CASCADE)
