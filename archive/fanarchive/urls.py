@@ -8,5 +8,5 @@ urlpatterns = [
 	# pointing to /fanarchive/5/
 	path('<int:work_id>/', views.detail, name='detail'),
 	# pointing to /fanarchive/5/whole_work/
-	# path() will go here
+	path('<int:work_id>/whole_work/', views.whole_work, name="whole work"),
 ]

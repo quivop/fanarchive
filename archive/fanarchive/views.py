@@ -11,3 +11,7 @@ def index(request):
 # super simple detail page
 def detail(request, work_id):
 	return HttpResponse("You're looking at work %s" % work_id)
+
+# super simple 'whole work' page
+def whole_work(request, work_id):
+	return HttpResponse("You're looking at ALL PARTS of work %s" % work_id)
