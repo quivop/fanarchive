@@ -7,3 +7,7 @@ from django.http import HttpResponse
 def index(request):
 	# now with Jinja2~
 	return render(request, 'fanarchive/index.jinja')
+
+# super simple detail page
+def detail(request, work_id):
+	return HttpResponse("You're looking at work %s" % work_id)
