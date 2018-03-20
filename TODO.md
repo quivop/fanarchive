@@ -4,10 +4,19 @@
 ## Development
 
 ### Models
-- [ ] `Work` model
+- [x] `Work` model
   - declared fields: `work_title`, `work_summary`, `date_created`
-- [ ] `WorkPart` model
+- [x] `WorkPart` model
   - declared fields: `related_work`, `work_part_text`
+- [ ] create migration 
+- [ ] add test data via api and frontend
+  - [ ] dump app-specific test data
+  - [ ] abstract more test data using .json dump?
+
+
+### Tests and testing
+- [ ] start test idea log you to extrapolate from
+
 
 
 ## Initializing the repo
