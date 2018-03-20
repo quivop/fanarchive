@@ -1,0 +1,29 @@
+[
+{
+    "model": "fanarchive.work",
+    "pk": 1,
+    "fields": {
+        "work_title": "What's new, pussycat?",
+        "work_summary": "Kyouya adds the text of an ancient and favored song to an image of a cat and accidentally creates the meme to end all memes.",
+        "date_created": "2018-03-19"
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 1,
+    "fields": {
+        "work_part_title": "Sunup",
+        "work_part_text": "Pussycat, pussycat, I've got flowers",
+        "work": 1
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 2,
+    "fields": {
+        "work_part_title": "Grisly End",
+        "work_part_text": "Rocks fell... everyone died...",
+        "work": 1
+    }
+}
+]
