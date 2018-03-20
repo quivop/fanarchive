@@ -6,6 +6,9 @@ from django.http import HttpResponse
 # import to enable DYNAMIC NEW index page
 from .models import Work
 
+# importing get_object_or_404 shortcut function
+from django.shortcuts import get_object_or_404
+
 # DYNAMIC NEW index page
 def index(request):
 	# get the five latest works
@@ -17,9 +20,11 @@ def index(request):
 	# render latest works using index.jinja template and the latest_work_list variable
 	return render(request, 'fanarchive/index.jinja', the_works)
 
-# super simple detail page
+# templated detail page
 def detail(request, work_id):
-	return HttpResponse("You're looking at work %s" % work_id)
+	# which will give you a 404 if the work you're trying to look up doesn't exist
+	work = get_object_or_404(Work, pk=work_id)
+	return render(request, 'fanarchive/detail.jinja', {'work': work})
 
 # super simple 'whole work' page
 def whole_work(request, work_id):
