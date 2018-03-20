@@ -27,4 +27,4 @@
   - [x] change settings.py accordingly
 
 ### Branch setup
-- [ ] development branch
+- [x] development branch
