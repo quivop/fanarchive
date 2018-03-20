@@ -25,3 +25,7 @@ class WorkPart(models.model):
 	# Foreign key relating each WorkPart to one Work.
 	# One WorkPart can have many Works, but a WorkPart can only have one Work
 	work = models.ForeignKey(Work, on_delete=models.CASCADE)
+
+	def __str__(self):
+		# returns a human-readable representation of a WorkPart when called by __str__()
+		return self.work_part_title
