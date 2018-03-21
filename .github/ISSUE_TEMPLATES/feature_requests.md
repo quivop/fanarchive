@@ -1,10 +1,12 @@
-Please put the user story in the issue title, like so:
+If you can't think of a short, descriptive title, you can put the user story in the issue title, like so:
 
 > `As a <user type>, I want to <task> so that <goal>`
 
 Example:
 
 > `As a fanfic reader, I want to subscribe to favorite authors so that I can follow their work`
+
+Don't forget to delete all this helper text!
 
 ## User story
 Expand on the user story here, if needed.
