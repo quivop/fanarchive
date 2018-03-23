@@ -2,11 +2,10 @@ from django.urls import path
 
 from . import views
 
+app_name = 'fanarchive'
 urlpatterns = [
-	# pointing to super-simple index view
-	path('', views.index, name='index'),
+	# pointing to dynamic index view
+	path('', views.IndexView.as_view(), name='index'),
 	# pointing to /fanarchive/5/
-	path('<int:work_id>/', views.detail, name='detail'),
-	# pointing to /fanarchive/5/whole_work/
-	# path() will go here
+	path('<int:pk>/', views.DetailView.as_view(), name='detail')
 ]

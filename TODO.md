@@ -5,17 +5,33 @@
 
 ### Models
 - [x] `Work` model
-  - declared fields: `work_title`, `work_summary`, `date_created`
+	- declared fields: `work_title`, `work_summary`, `date_created`
 - [x] `WorkPart` model
-  - declared fields: `related_work`, `work_part_text`
-- [ ] create migration 
-- [ ] add test data via api and frontend
-  - [ ] dump app-specific test data
-  - [ ] abstract more test data using .json dump?
+	- declared fields: `related_work`, `work_part_text`
+- [x] create migration 
+- [x] add test data via api and frontend
+	- [x] dump app-specific test data
+	- [ ] abstract more test data using .json dump?
 
+### Views
+- [ ] `index` view, spitting out:
+	- [ ] all works on the archive
+	- [ ] in most-recent-first sort
+	- [ ] with pagination?
+- [ ] work `detail` view
+	- [ ] called Work
+	- [ ] links to all related WorkParts
+- [ ] `whole_work` view
+	- [ ] called Work
+	- [ ] all related WorkParts in full
+
+### Templates
+- [ ] `index` template
+- [ ] `detail` template
+- [ ] `whole_work` template
 
 ### Tests and testing
-- [ ] start test idea log you to extrapolate from
+- [ ] start test idea log for you to extrapolate from
 
 
 
