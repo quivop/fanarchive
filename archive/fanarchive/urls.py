@@ -5,9 +5,7 @@ from . import views
 app_name = 'fanarchive'
 urlpatterns = [
 	# pointing to super-simple index view
-	path('', views.index, name='index'),
+	path('', views.IndexView.as_view(), name='index'),
 	# pointing to /fanarchive/5/
-	path('<int:work_id>/', views.detail, name='detail'),
-	# pointing to /fanarchive/5/whole_work/
-	path('<int:work_id>/whole_work/', views.whole_work, name="whole work"),
+	path('<int:pk>/', views.DetailView.as_view(), name='detail')
 ]
