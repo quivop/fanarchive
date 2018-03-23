@@ -1,0 +1,110 @@
+[
+{
+    "model": "fanarchive.workpart",
+    "pk": 1,
+    "fields": {
+        "work_part_title": "Sunup",
+        "work_part_text": "Pussycat, pussycat, I've got flowers",
+        "work": 1
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 2,
+    "fields": {
+        "work_part_title": "Grisly End",
+        "work_part_text": "Rocks fell... everyone died...",
+        "work": 1
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 3,
+    "fields": {
+        "work_part_title": "The actual song",
+        "work_part_text": "What's new pussycat whoa\r\nWhat's new pussycat whoa oh\r\nPussycat, pussycat, I've got flowers \r\nAnd lots of hours to spend time with you\r\nSo go and powder your cute little pussycat nose\r\nPussycat, pussycat, I love you yes I do\r\nYou and your pussycat nose\r\nWhat's new pussycat whoa\r\nWhat's new pussycat whoa oh oh\r\nPussycat, pussycat, you're so thrilling\r\nAnd I'm so willing to care for you\r\nSo go and make up your big little pussycat eyes\r\nPussycat, pussycat, I love you yes I do\r\nYou and your pussycat eyes\r\nWhat's new pussycat whoa\r\nWhat's new pussycat whoa oh oh\r\nPussycat, pussycat, you're delicious\r\nAnd if my wishes can all come true\r\nI'll soon be kissing your sweet little pussycat lips\r\nPussycat, pussycat, I love you yes I do\r\nYou and your pussycat eyes whoa \r\nYou and your pussycat nose",
+        "work": 1
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 4,
+    "fields": {
+        "work_part_title": "Edwina sets out",
+        "work_part_text": "Pokem ipsum dolor sit amet Corsola Wormadam Zephyr Badge Charmeleon Kyurem Torterra. Vermilion City in voluptate velit esse cillum dolore eu fugiat nulla pariatur Porygon Throh Sandile Leavanny Kakuna. Psychic Donphan Treecko Slakoth Shinx you're not wearing shorts Growlithe. Sand-Attack Taillow Wigglytuff Lotad Lickitung Machoke Paras. Poison Sting Diglett Spinarak Solrock Registeel Vanilluxe Regice. \r\n\r\nUt enim ad minim veniam Marshtomp Weavile Lotad Dragonite Pawniard Viridian City. Yellow Gastly Exeggcute Graveler Chinchou Zekrom Ice Berry. Hoenn Trubbish deserunt mollit Calcium Shelmet Cranidos Reshiram. The Power Of One Magikarp Pachirisu Staryu Castform Omastar Duskull. Dig Beldum Dig Swampert Maractus Steelix Clamperl. \r\n\r\nRuby Mienshao Glameow Pokemon 4Ever Remoraid surrender now or prepare to fight Mankey. Storm Badge Pokemon The Movie 2000 Darkrai Skuntank Glameow Lilligant Kingler. Electric Blastoise Pallet Town Seedot Keldeo Leafeon Timburr. Leech Seed a wild Pokemon appeared Kricketot Porygon2 Weavile Vaporeon Bronzor. Dig Stunfisk Gastrodon Barboach Happiny Giratina Blitzle.",
+        "work": 2
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 5,
+    "fields": {
+        "work_part_title": "Edwina meets a lamb",
+        "work_part_text": "Meowth, that's right Soul Badge Groudon Ledyba Hitmonlee Vaporeon Sudowoodo. Pewter City Diglett Wormadam the power that's inside Farfetch'd I wanna be the very best Drapion. Sed do eiusmod tempor incididunt Phanpy Sandslash Dig Glaceon Charmander Snorunt. Water Gun Lunatone Starmie Totodile Conkeldurr duis aute irure dolor in reprehenderit bicycle. Sapphire Marill Zweilous Cofagrigus Feraligatr Bayleef Beautifly. \r\n\r\nGround Yanmega Dragonite Gothitelle Weepinbell Dark Luxio. Rising Badge Haxorus Sewaddle Lickitung Poke Flute Tyranitar Ampharos. Cascade Badge Ninetales Haunter Marshtomp Banette Murkrow Glameow. Meowth, that's right to catch them is my real test Unfezant Whimsicott Pokemon Swift Rage. Dragon Rage Ditto Delcatty Whiscash Sunkern Luvdisc Dusclops.",
+        "work": 2
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 6,
+    "fields": {
+        "work_part_title": "Edwina is dismayed",
+        "work_part_text": "Pokem ipsum dolor sit amet Gothitelle Ditto Psyduck Tympole to train them is my cause Horsea. Glitch City Blastoise Celadon City Dugtrio Togepi Lampent Ariados. Excepteur sint occaecat cupidatat non proident Meowth Ruby Harden Magikarp ut enim ad minim veniam Tentacruel. Leech Seed Banette Virizion Weavile Tangrowth Natu Team Rocket. Cascade Badge Escavalier Wormadam Drifblim Minun Clamperl Swadloon. \r\n\r\nCerulean City Kanto Glameow Vibrava Roggenrola Wailmer Girafarig. Sand-Attack Nidorina Swadloon Emolga Purugly Haunter Bonsly. Fire Red Phanpy Misdreavus we're blasting off again Klang Swift Hariyama. Grass Blizzard Earthquake Staryu Sunflora Slash Heracross. Viridian City Altaria Togekiss Drifblim Flying Drifloon like no one ever was.",
+        "work": 2
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 7,
+    "fields": {
+        "work_part_title": "One",
+        "work_part_text": "Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. \r\n\r\nAenean quam. In scelerisque sem at dolor. \"Maecenas mattis. Sed convallis tristique sem.\" \r\n\r\n\"Proin ut ligula vel nunc egestas porttitor!\" \r\n\r\n\"Morbi lectus risus, iaculis vel,\" suscipit quis, \"luctus non, massa...\" Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+        "work": 3
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 8,
+    "fields": {
+        "work_part_title": "Two",
+        "work_part_text": "Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. \r\n\r\nQuisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. \r\n\r\nSed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. \r\n\r\n\"Sed pretium blandit orci.\" \r\n\r\n\"Ut eu diam at pede suscipit-- sodales.\" \r\n\r\nAenean lectus elit, fermentum non, convallis id, sagittis at, neque.\" Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula. Nulla ut felis in purus aliquam imperdiet.",
+        "work": 3
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 9,
+    "fields": {
+        "work_part_title": "LOVE LORD TO MR MAID",
+        "work_part_text": "Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 \u00be dress robes I must not tell lies. \r\n\r\nMudbloods yew pumpkin juice phials Ravenclaw\u2019s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.",
+        "work": 5
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 10,
+    "fields": {
+        "work_part_title": "MORE MORAL DILDO TV",
+        "work_part_text": "Squashy armchairs dirt on your nose brass scales crush the Sopophorous bean with flat side of silver dagger, releases juice better than cutting. Full moon Whomping Willow three turns should do it lemon drops. Locomotor trunks owl treats that will be 50 points, Mr. Potter. Witch Weekly, he will rise again and he will come for us, headmaster Erumpent horn. Fenrir Grayback horseless carriages \u2018zis is a chance many would die for!",
+        "work": 5
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 11,
+    "fields": {
+        "work_part_title": "O MAD V, LORDLIER TOM",
+        "work_part_text": "Prefect\u2019s bathroom Trelawney veela squashy armchairs, SPEW: Gamp\u2019s Elemental Law of Transfiguration. Magic Nagini bezoar, Hippogriffs Headless Hunt giant squid petrified. Beuxbatons flying half-blood revision schedule, Great Hall aurors Minerva McGonagall Polyjuice Potion. Restricted section the Burrow Wronski Feint gnomes, quidditch robes detention, chocolate frogs. Errol parchment knickerbocker glory Avada Kedavra Shell Cottage beaded bag portrait vulture-hat. Twin cores, Aragog crimson gargoyles, Room of Requirement counter-clockwise Shrieking Shack. Snivellus second floor bathrooms vanishing cabinet Wizard Chess, are you a witch or not?\r\n\r\nTHE END. FOR NOW.",
+        "work": 5
+    }
+},
+{
+    "model": "fanarchive.workpart",
+    "pk": 12,
+    "fields": {
+        "work_part_title": "collections",
+        "work_part_text": "Father Christmas. Santa Claus. Or as I've always known him: Jeff. Did I mention we have comfy chairs? I am the last of my species, and I know how that weighs on the heart so don't lie to me! No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.\r\n\r\nAnnihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?\r\nIt's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'!\r\n\r\nNo\u2026 It's a thing; it's like a plan, but with more greatness. Sorry, checking all the water in this area; there's an escaped fish. *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do!\r\n\r\n- Did I mention we have comfy chairs?\r\n- Father Christmas. Santa Claus. Or as I've always known him: Jeff.\r\n- Heh-haa! Super squeaky bum time!",
+        "work": 6
+    }
+}
+]
