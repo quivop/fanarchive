@@ -14,7 +14,7 @@ class Work(models.Model):
 	def __str__(self):
 		# returning a nice, human-readable representation of the model when called by __str__() method
 		return self.work_title
-
+	
 # WorkPart model
 
 class WorkPart(models.Model):
