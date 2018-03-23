@@ -25,12 +25,14 @@
 
       <!-- if the Work has any WorkParts -->
       {% if work.workpart_set.count() > 0 %}
-      <ul>
-        <!-- list them -->
-        {% for workpart in work.workpart_set.all() %}
-        <li>{{ workpart.work_part_title }}</li>
-        {% endfor %}
-      </ul>
+      
+      <!-- list them -->
+      {% for workpart in work.workpart_set.all() %}
+      <article><h3>Part {{ loop.index }}: {{ workpart.work_part_title }}</h3>
+        <p>{{ workpart.work_part_text }}</p>
+      </article>
+      {% endfor %}
+      
       <!-- else, give the user a sad message -->
       {% else %}
       <p>I'm sorry, <strong>{{ work.work_title }}</strong> has no work parts available.</p>
