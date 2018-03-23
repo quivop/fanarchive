@@ -19,7 +19,7 @@
       {% if latest_work_list %}
       <ul>
         {% for work in latest_work_list %}
-        <li><a href="/fanarchive/{{ work.id }}/">{{ work.work_title }}</a></li>
+        <li><a href="{{ url('detail', work.id) }}">{{ work.work_title }}</a></li>
         {% endfor %}
       </ul>
       {% else %}
