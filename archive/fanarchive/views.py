@@ -25,7 +25,3 @@ def detail(request, work_id):
 	# which will give you a 404 if the work you're trying to look up doesn't exist
 	work = get_object_or_404(Work, pk=work_id)
 	return render(request, 'fanarchive/detail.jinja', {'work': work})
-
-# super simple 'whole work' page
-def whole_work(request, work_id):
-	return HttpResponse("You're looking at ALL PARTS of work %s" % work_id)
