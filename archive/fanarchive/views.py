@@ -1,9 +1,19 @@
-from django.shortcuts import render
-
-# import to enable super-simple index page
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
-# super-simple index page
-def index(request):
-	# now with Jinja2~
-	return render(request, 'fanarchive/index.jinja')
+# adding this to power switch to generic views
+from django.views import generic
+
+from .models import Work, WorkPart
+
+class IndexView(generic.ListView):
+	template_name = 'fanarchive/index.jinja'
+	context_object_name = 'latest_work_list'
+
+	def get_queryset(self):
+		"""Return the last five published works"""
+		return Work.objects.order_by('-date_created')[:5]
+
+class DetailView(generic.DetailView):
+	model = Work
+	template_name = 'fanarchive/detail.jinja'
