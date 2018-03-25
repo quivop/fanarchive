@@ -37,3 +37,8 @@ class WorkModelTest(TestCase):
 		work=Work.objects.get(id=1)
 		expected_date = date.today()
 		self.assertEquals(expected_date, work.date_created)	
+
+	def test_work_title_max_length(self):
+		work=Work.objects.get(id=1)
+		max_length = work._meta.get_field('work_title').max_length
+		self.assertEquals(max_length,200)
