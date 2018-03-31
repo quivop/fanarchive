@@ -10,6 +10,7 @@ class WorkModelTest(TestCase):
 	def setUpTestData(cls):
 		# Set up non-modified objects used by all test methods
 		Work.objects.create(work_title='Ermagerd', work_summary="Really, erma freaking gard, they're sleeping together...",)
+		Work.objects.create(work_title='No really', work_summary="What in the ACTUAL HELLO", date_created=(date.today() - timedelta(days=1)))
 
 	# testing field labels~
 	def test_work_title_label(self):
@@ -42,3 +43,5 @@ class WorkModelTest(TestCase):
 		work=Work.objects.get(id=1)
 		max_length = work._meta.get_field('work_title').max_length
 		self.assertEquals(max_length,200)
+
+
