@@ -1,8 +1,8 @@
 from django.test import TestCase
 
 from fanarchive.models import Work
-from datetime import date
-import datetime
+from datetime import date, timedelta
+
 
 class WorkModelTest(TestCase):
 
