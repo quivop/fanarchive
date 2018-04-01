@@ -35,7 +35,7 @@ class IndexViewTest(TestCase):
 
 		# Leaving this bit commented till I rip out jinja templating
 
-		# self.assertTemplateUsed(resp, 'fanarchive/home.jinja')
+		self.assertTemplateUsed(resp, 'fanarchive/index.html')
 
 
 
