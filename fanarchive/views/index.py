@@ -3,7 +3,7 @@ from django.views import generic
 from fanarchive.models import Work, WorkPart
 
 class IndexView(generic.ListView):
-	template_name = 'fanarchive/index.jinja'
+	template_name = 'fanarchive/index.html'
 	context_object_name = 'latest_work_list'
 
 	def get_queryset(self):

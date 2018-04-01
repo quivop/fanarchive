@@ -5,8 +5,7 @@
   <head>
 
     <meta charset="utf-8">
-    <!-- titlecase for the page title just cuz -->
-    <title>{{ work.work_title|title }}</title>
+    <title>{{ work.work_title }}</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
 
   </head>
@@ -24,10 +23,10 @@
       <p><strong>Work created on:</strong> {{ work.date_created }}</p>
 
       <!-- if the Work has any WorkParts -->
-      {% if work.workpart_set.count() > 0 %}
+      {% if work.workpart_set.count > 0 %}
       
       <!-- list them -->
-      {% for workpart in work.workpart_set.all() %}
+      {% for workpart in work.workpart_set.all %}
       <article><h3>Part {{ loop.index }}: {{ workpart.work_part_title }}</h3>
         <p>{{ workpart.work_part_text }}</p>
       </article>

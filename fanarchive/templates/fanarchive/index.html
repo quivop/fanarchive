@@ -5,7 +5,7 @@
   <head>
 
     <meta charset="utf-8">
-    <title>{{ hello_title }}</title>
+    <title>HELL</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
 
   </head>
@@ -19,7 +19,7 @@
       {% if latest_work_list %}
       <ul>
         {% for work in latest_work_list %}
-        <li><a href="{{ url('fanarchive:detail', work.id) }}">{{ work.work_title }}</a></li>
+        <li><a href="{% url 'fanarchive:detail' work.id %}">{{ work.work_title }}</a></li>
         {% endfor %}
       </ul>
       {% else %}
