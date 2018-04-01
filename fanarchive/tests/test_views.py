@@ -40,6 +40,20 @@ class IndexViewTest(TestCase):
 
 
 class DetailViewTest(TestCase):
-	pass
+	
+	@classmethod
+	def setUpTestData(cls):
+		# create a work
+		Work.objects.create(work_title="Butts", work_summary="more butts")
+		# create a work part
+		WorkPart.objects.create(work_part_title="butt beginnings", work_part_text="and so there was, in the beginning, a butt", work_id=1)
 
-	# another placeholder
+
+	def test_detail_view_url_exists_at_desired_location(self):
+		pass
+
+	def test_if_detail_view_uses_correct_template(self):
+		pass
+
+	def test_detail_view_displays_work_and_work_part(self):
+		pass
