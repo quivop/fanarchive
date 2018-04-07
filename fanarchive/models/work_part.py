@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class WorkPart(models.Model):
     work_part_title = models.CharField('work part title', max_length=200)
     work_part_text = models.TextField('work part text')
