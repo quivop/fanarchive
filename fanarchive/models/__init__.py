@@ -1,2 +1,2 @@
 from .fic import Fic
-from .fic_chapter import FicChapter
+from .fic_part import FicPart
