@@ -14,21 +14,21 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Work',
+            name='Fic',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('work_title', models.CharField(max_length=200, verbose_name='work title')),
-                ('work_summary', models.TextField(max_length=500, verbose_name='work summary')),
+                ('fic_title', models.CharField(max_length=200, verbose_name='fic title')),
+                ('fic_summary', models.TextField(max_length=500, verbose_name='fic summary')),
                 ('date_created', models.DateField(default=datetime.date.today, verbose_name='date created')),
             ],
         ),
         migrations.CreateModel(
-            name='WorkPart',
+            name='FicPart',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('work_part_title', models.CharField(max_length=200, verbose_name='work part title')),
-                ('work_part_text', models.TextField(verbose_name='work part text')),
-                ('work', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fanarchive.Work')),
+                ('fic_part_title', models.CharField(max_length=200, verbose_name='fic part title')),
+                ('fic_part_text', models.TextField(verbose_name='fic part text')),
+                ('fic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fanarchive.Fic')),
             ],
         ),
     ]
