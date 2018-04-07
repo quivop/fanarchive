@@ -1,8 +1,8 @@
 from django.views import generic
 
-from fanarchive.models import Work
+from fanarchive.models import Fic
 
 
 class DetailView(generic.DetailView):
-    model = Work
+    model = Fic
     template_name = 'fanarchive/detail.html'
