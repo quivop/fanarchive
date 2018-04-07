@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 
+
 class Work(models.Model):
     work_title = models.CharField('work title', max_length=200)
     # remember, this is enforced only at view level, not on db or in the model. needs testing
