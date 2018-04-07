@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # registering our models
-from .models import Work, WorkPart
+from .models import Fic, FicPart
 
-admin.site.register(Work)
-admin.site.register(WorkPart)
+admin.site.register(Fic)
+admin.site.register(FicPart)
