@@ -9,4 +9,4 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published fics"""
-        return Fic.objects.order_by('-date_created')[:5]
+        return Fic.objects.order_by('-pub_date')[:5]
