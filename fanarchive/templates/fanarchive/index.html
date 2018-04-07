@@ -16,14 +16,14 @@
 
     <main>
       <p>Welcome to the FAN ARCHIVE.</p>
-      {% if latest_work_list %}
+      {% if latest_fic_list %}
       <ul>
-        {% for work in latest_work_list %}
-        <li><a href="{% url 'fanarchive:detail' work.id %}">{{ work.work_title }}</a></li>
+        {% for fic in latest_fic_list %}
+        <li><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></li>
         {% endfor %}
       </ul>
       {% else %}
-      <p>No works are available <strong>:sadface:</strong>.</p>
+      <p>No fics are available <strong>:sadface:</strong>.</p>
       {% endif %}
 
 

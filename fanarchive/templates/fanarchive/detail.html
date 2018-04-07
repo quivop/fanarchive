@@ -5,7 +5,7 @@
   <head>
 
     <meta charset="utf-8">
-    <title>{{ work.work_title }}</title>
+    <title>{{ fic.fic_title }}</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
 
   </head>
@@ -16,25 +16,25 @@
 
     <main>
       <!-- but no titlecase here -->
-      <h1>{{ work.work_title }}</h1>
+      <h1>{{ fic.fic_title }}</h1>
       
-      <p><strong>Work summary:</strong> {{ work.work_summary }}</p>
+      <p><strong>Fic summary:</strong> {{ fic.fic_summary }}</p>
 
-      <p><strong>Work created on:</strong> {{ work.date_created }}</p>
+      <p><strong>Fic created on:</strong> {{ fic.date_created }}</p>
 
-      <!-- if the Work has any WorkParts -->
-      {% if work.workpart_set.count > 0 %}
+      <!-- if the Fic has any FicParts -->
+      {% if fic.ficpart_set.count > 0 %}
       
       <!-- list them -->
-      {% for workpart in work.workpart_set.all %}
-      <article><h3>Part {{ loop.index }}: {{ workpart.work_part_title }}</h3>
-        <p>{{ workpart.work_part_text }}</p>
+      {% for ficpart in fic.ficpart_set.all %}
+      <article><h3>Part {{ loop.index }}: {{ ficpart.fic_part_title }}</h3>
+        <p>{{ ficpart.fic_part_text }}</p>
       </article>
       {% endfor %}
       
       <!-- else, give the user a sad message -->
       {% else %}
-      <p>I'm sorry, <strong>{{ work.work_title }}</strong> has no work parts available.</p>
+      <p>I'm sorry, <strong>{{ fic.fic_title }}</strong> has no fic parts available.</p>
       {% endif %}
 
     </main>
