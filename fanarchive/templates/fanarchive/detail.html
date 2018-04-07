@@ -27,7 +27,7 @@
       
       <!-- list them -->
       {% for ficpart in fic.ficpart_set.all %}
-      <article><h3>Part {{ loop.index }}: {{ ficpart.fic_part_title }}</h3>
+      <article><h3>Part {{ forloop.counter }}: {{ ficpart.fic_part_title }}</h3>
         <p>{{ ficpart.fic_part_text }}</p>
       </article>
       {% endfor %}
