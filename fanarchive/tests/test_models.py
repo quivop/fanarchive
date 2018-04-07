@@ -1,7 +1,8 @@
 from django.test import TestCase
 
 from fanarchive.models import Fic, FicPart
-from datetime import date, timedelta
+from datetime import timedelta
+from django.utils import timezone
 
 
 class FicModelTest(TestCase):
@@ -10,15 +11,17 @@ class FicModelTest(TestCase):
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
         #
-        # Fic with default date_created (fic1)
+        # Fic with default pub_date (fic1)
+        #test_date = timezone.now()
+
         Fic.objects.create(
             fic_title='Ermagerd',
             fic_summary="Really, erma freaking gard, they're sleeping together...",)
-        # Fic with future date_created (fic2)
+        # Fic with future pub_date (fic2)
         Fic.objects.create(
             fic_title='No really',
             fic_summary="What in the ACTUAL HELLO",
-            date_created=(date.today() + timedelta(days=1)))
+            pub_date=(timezone.now() + timedelta(days=1)))
         # Fic part related to fic1 (fic_part1)
         FicPart.objects.create(
             fic_id=1,
@@ -36,21 +39,26 @@ class FicModelTest(TestCase):
         field_label = fic._meta.get_field('fic_summary').verbose_name
         self.assertEquals(field_label, 'fic summary')
 
-    def test_date_created_label(self):
+    def test_pub_date_label(self):
         fic = Fic.objects.get(id=1)
-        field_label = fic._meta.get_field('date_created').verbose_name
-        self.assertEquals(field_label, 'date created')
+        field_label = fic._meta.get_field('pub_date').verbose_name
+        self.assertEquals(field_label, 'date published')
 
     def test_object_name_is_fic_title(self):
         fic = Fic.objects.get(id=1)
         expected_object_name = '%s' % (fic.fic_title)
         self.assertEquals(expected_object_name, str(fic))
 
-    def test_date_created_is_today(self):
+    def test_pub_date_is_today(self):
         # also checks that a default date is being set at all
         fic = Fic.objects.get(id=1)
-        expected_date = date.today()
-        self.assertEquals(expected_date, fic.date_created)
+        expected_date = timezone.now()
+        delta = expected_date - fic.pub_date
+        print(delta)
+        if delta.seconds < 86400:
+            return True
+        else:
+            return False
 
     def test_fic_title_max_length(self):
         fic = Fic.objects.get(id=1)
@@ -81,8 +89,8 @@ class FicModelTest(TestCase):
 
 # FUTURE TESTS #
 
-# test that fic with future date_created posts properly
-# test that fic with past date_created posts properly
+# test that fic with future pub_date posts properly
+# test that fic with past pub_date posts properly
 
 # test that fics are sorted by date in reverse order?
 
