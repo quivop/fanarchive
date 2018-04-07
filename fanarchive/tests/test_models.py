@@ -12,7 +12,6 @@ class FicModelTest(TestCase):
         # Set up non-modified objects used by all test methods
         #
         # Fic with default pub_date (fic1)
-        #test_date = timezone.now()
 
         Fic.objects.create(
             fic_title='Ermagerd',
@@ -93,4 +92,3 @@ class FicModelTest(TestCase):
 # test that fic with past pub_date posts properly
 
 # test that fics are sorted by date in reverse order?
-
