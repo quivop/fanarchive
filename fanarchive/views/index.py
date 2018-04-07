@@ -1,12 +1,12 @@
 from django.views import generic
 
-from fanarchive.models import Work
+from fanarchive.models import Fic
 
 
 class IndexView(generic.ListView):
     template_name = 'fanarchive/index.html'
-    context_object_name = 'latest_work_list'
+    context_object_name = 'latest_fic_list'
 
     def get_queryset(self):
-        """Return the last five published works"""
-        return Work.objects.order_by('-date_created')[:5]
+        """Return the last five published fics"""
+        return Fic.objects.order_by('-date_created')[:5]

@@ -1,2 +1,2 @@
-from .work import Work
-from .work_part import WorkPart
+from .fic import Fic
+from .fic_part import FicPart
