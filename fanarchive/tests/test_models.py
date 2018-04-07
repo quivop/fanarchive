@@ -86,4 +86,3 @@ class FicModelTest(TestCase):
 
 # test that fics are sorted by date in reverse order?
 
-
