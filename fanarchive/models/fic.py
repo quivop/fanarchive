@@ -8,7 +8,7 @@ class Fic(models.Model):
     # remember, this is enforced only at view level, not on db or in the model. needs testing
     fic_summary = models.TextField('fic summary', max_length=500)
     # default both date fields to now
-    pub_date = models.DateTimeField('date created', default=timezone.now)
+    pub_date = models.DateTimeField('date published', default=timezone.now)
     date_updated = models.DateTimeField('date updated', default=timezone.now)
 
     def __str__(self):
