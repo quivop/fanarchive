@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from fanarchive.models import Work, WorkPart
+from fanarchive.models import Fic, FicPart
 from datetime import date, timedelta
 
 
@@ -9,13 +9,13 @@ class IndexViewTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # create a bunch of works and work parts
-        number_of_works = 25
-        for work_num in range(number_of_works):
-            Work.objects.create(
-                work_title='Work %s' % work_num,
-                work_summary='Butts',
-                date_created=(date.today() - timedelta(days=work_num)))
+        # create a bunch of fics and fic parts
+        number_of_fics = 25
+        for fic_num in range(number_of_fics):
+            Fic.objects.create(
+                fic_title='Fic %s' % fic_num,
+                fic_summary='Butts',
+                date_created=(date.today() - timedelta(days=fic_num)))
 
     def test_if_site_homepage_redirects_to_fanarchive(self):
         '''Going to 'archive.homepage/' should redirect you to the '/fanarchive/' app directory.
@@ -47,15 +47,15 @@ class DetailViewTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # create a work
-        Work.objects.create(
-            work_title="Butts",
-            work_summary="more butts")
-        # create a work part
-        WorkPart.objects.create(
-            work_part_title="butt beginnings",
-            work_part_text="and so there was, in the beginning, a butt",
-            work_id=1)
+        # create a fic
+        Fic.objects.create(
+            fic_title="Butts",
+            fic_summary="more butts")
+        # create a fic part
+        FicPart.objects.create(
+            fic_part_title="butt beginnings",
+            fic_part_text="and so there was, in the beginning, a butt",
+            fic_id=1)
 
     def test_detail_view_url_exists_at_desired_location(self):
         pass
@@ -63,5 +63,5 @@ class DetailViewTest(TestCase):
     def test_if_detail_view_uses_correct_template(self):
         pass
 
-    def test_detail_view_displays_work_and_work_part(self):
+    def test_detail_view_displays_fic_and_fic_part(self):
         pass
