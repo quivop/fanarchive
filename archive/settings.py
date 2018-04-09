@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+# heroku-specific again
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7f9wjg5062^%4d2=kh&%s31$2n8et_0d0tes^!xqak&oy-=8r%'
+# SECRET_KEY = '7f9wjg5062^%4d2=kh&%s31$2n8et_0d0tes^!xqak&oy-=8r%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1']
 
@@ -36,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # add whitenoise
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
     'fanarchive.apps.FanarchiveConfig',
@@ -49,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # adding whitenoise
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'archive.urls'
@@ -83,6 +89,9 @@ DATABASES = {
     }
 }
 
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+# postgres://USER:PASSWORD@HOST:PORT/NAME
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -109,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 # Changed time zone to Pacific for kicks
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -122,3 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())

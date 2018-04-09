@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.urls import reverse
 
 from fanarchive.models import Fic, FicPart
-from datetime import date, timedelta
+from datetime import timedelta
+from django.utils import timezone
 
 
 class IndexViewTest(TestCase):
@@ -15,7 +16,7 @@ class IndexViewTest(TestCase):
             Fic.objects.create(
                 fic_title='Fic %s' % fic_num,
                 fic_summary='Butts',
-                date_created=(date.today() - timedelta(days=fic_num)))
+                pub_date=(timezone.now() - timedelta(days=fic_num)))
 
     def test_if_site_homepage_redirects_to_fanarchive(self):
         '''Going to 'archive.homepage/' should redirect you to the '/fanarchive/' app directory.

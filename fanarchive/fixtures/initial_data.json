@@ -64,12 +64,21 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "9yflx0oq83arykjha9zotyryvimhb539",
+    "fields": {
+        "session_data": "ZGIxMWUzMDI2NzM4N2YwYTNkNjg2YjlhZGQ1MmRjZWFkODNhYTQ0ZTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1ZjMwMjMyY2EwYjhkOWE1MjVmMTNkNTRmM2U0ZDYzNzliODE0ODJiIn0=",
+        "expire_date": "2018-04-21T10:43:26.607Z"
+    }
+},
+{
     "model": "fanarchive.fic",
     "pk": 1,
     "fields": {
         "fic_title": "What's new, pussycat?",
         "fic_summary": "Kyouya adds the text of an ancient and favored song to an image of a cat and accidentally creates the meme to end all memes.",
-        "date_created": "2018-03-19"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -78,7 +87,8 @@
     "fields": {
         "fic_title": "Once I was a common gel",
         "fic_summary": "Edwina Thronswill, a green girl of some seventeen years, sets out on a journey that will change her fortune, her outlook, and instill in her a passionate devotion for hedgehogs and trillby hats.",
-        "date_created": "2017-02-02"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -87,7 +97,8 @@
     "fields": {
         "fic_title": "Time and Beyond Caring",
         "fic_summary": "It's always the long days that do you in. Or: Cyrus and Dominic come to a closer understanding of each other.",
-        "date_created": "2016-11-15"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -96,7 +107,8 @@
     "fields": {
         "fic_title": "Sparks",
         "fic_summary": "Miles Edgeworth is not a good man. And yet, whenever she sees him, Mia can't help but wonder what he might be like in... certain situations.",
-        "date_created": "2018-01-25"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -105,7 +117,8 @@
     "fields": {
         "fic_title": "Anagram, aka the frivolous drabble collection to end all drabble collections",
         "fic_summary": "One insane fan's attempt to write a custom drabble for every possible ficcable permutation of non-standard Lord Voldemort anagrams. You've been warned.",
-        "date_created": "2018-03-05"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -114,7 +127,8 @@
     "fields": {
         "fic_title": "a ghost of change",
         "fic_summary": "You know how I sometimes have really brilliant ideas? I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself. They're not aliens, they're Earth\u2026liens!",
-        "date_created": "2017-06-23"
+        "pub_date": "2018-04-07T10:33:17.186Z",
+        "date_updated": "2018-04-07T10:33:17.180Z"
     }
 },
 {
@@ -446,7 +460,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$100000$yrXe0vTdNhIY$pkd3JV9GtnhIKvPqOtqccfcwHDxw826on1NYWuwfq7U=",
-        "last_login": "2018-03-19T21:16:53.901Z",
+        "last_login": "2018-04-07T10:43:26.594Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
