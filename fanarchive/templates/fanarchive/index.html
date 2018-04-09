@@ -1,3 +1,4 @@
+{% load static %} <!-- (load static files) -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,6 +17,7 @@
 
     <main>
       <p>Welcome to the FAN ARCHIVE.</p>
+
       {% if latest_fic_list %}
       <ul>
         {% for fic in latest_fic_list %}
@@ -25,6 +27,10 @@
       {% else %}
       <p>No fics are available <strong>:sadface:</strong>.</p>
       {% endif %}
+
+      <p>My hero:</p>
+
+      <p><img src="{% static 'img/hero.jpg' alt='image of THE HERO' %}"/></p>
 
 
     </main>
