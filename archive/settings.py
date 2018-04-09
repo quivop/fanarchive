@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '7f9wjg5062^%4d2=kh&%s31$2n8et_0d0tes^!xqak&oy-=8r%'
+SECRET_KEY = 'butts'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # disable whitenoise no-static
-    # 'whitenoise.runserver_nostatic',
+    # add whitenoise
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
     'fanarchive.apps.FanarchiveConfig',
