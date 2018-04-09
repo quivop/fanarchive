@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # add whitenoise
-    'whitenoise.runserver_nostatic',
+    # disable whitenoise no-static
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
     'fanarchive.apps.FanarchiveConfig',
