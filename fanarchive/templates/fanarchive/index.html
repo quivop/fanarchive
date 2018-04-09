@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %} <!-- (load static files) -->
 <html lang="en">
 
   <head>
@@ -28,7 +27,7 @@
       {% endif %}
 
       <p>My hero:</p>
-
+      {% load static %} <!-- (load static files) -->
       <p><img src="{% static 'img/hero.jpg' alt='image of THE HERO' %}"/></p>
 
 

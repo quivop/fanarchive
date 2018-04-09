@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os
+import os, sys
 # heroku-specific again
 # import dj_database_url
 
@@ -26,6 +26,18 @@ SECRET_KEY = 'butts'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
+
+# logging
+LOGGING = {
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout
+        },
+
+    }
+}
 
 ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1', 'fanarchive-demo-wow.herokuapp.com', 'localhost:5000']
 
