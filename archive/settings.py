@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os
+import os, sys
 from dotenv import load_dotenv
 
 
@@ -31,22 +31,29 @@ SECRET_KEY = 'butts'
 DEBUG = os.environ.get('DEBUG', True)
 
 # logging
+
+from django.utils.log import DEFAULT_LOGGING
+
+DEFAULT_LOGGING['handlers']['console']['filters'] = []
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'level': 'INFO',
+            'stream': sys.stdout
         },
-       'file': {
-           'level': 'INFO',
-           'class': 'logging.FileHandler',
-           'filename': os.path.join(BASE_DIR,'log.django'),
-       },
+       # 'file': {
+       #     'level': 'INFO',
+       #     'class': 'logging.FileHandler',
+       #     'filename': os.path.join(BASE_DIR,'log.django'),
+       # },
     },
     'loggers': {
         'django': {
-            'handlers': ['console','file'],
+            'handlers': ['console',],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
     },
@@ -149,5 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles/'))
+# STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles/'))
+
+import django_heroku
+django_heroku.settings(locals())
 
