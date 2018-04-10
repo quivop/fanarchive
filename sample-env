@@ -1,0 +1,10 @@
+# Sample .env file #
+#
+# generate a Django secret key by doing:
+# `python manage.py shell -c "from django.core.management import utils; print(utils.get_random_secret_key())"`
+#
+# Then paste it below:
+
+DJANGO_SECRET_KEY="paste-key-here"
+
+# *THEN* close this file, and rename it from `sample-env` to `.env`
