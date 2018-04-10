@@ -10,13 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
-import os, sys
-# heroku-specific again
-# import dj_database_url
+import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+env_path = os.path.join(BASE_DIR, ".env")
+load_dotenv(dotenv_path=env_path)
+TIMES = os.getenv("TIMES")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -25,21 +28,31 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'butts'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', True)
 
 # logging
 LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
     'handlers': {
         'console': {
-            'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'stream': sys.stdout
         },
-
-    }
+       'file': {
+           'level': 'INFO',
+           'class': 'logging.FileHandler',
+           'filename': os.path.join(BASE_DIR,'log.django'),
+       },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console','file'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
 }
 
-ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1', 'fanarchive-demo-wow.herokuapp.com', 'localhost:5000']
+ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1',]
 
 
 # Application definition
@@ -50,8 +63,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # add whitenoise
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
     'fanarchive.apps.FanarchiveConfig',
@@ -65,8 +76,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # adding whitenoise
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'archive.urls'
@@ -82,7 +91,6 @@ TEMPLATES = [
             'django.template.context_processors.request',
             'django.contrib.auth.context_processors.auth',
             'django.contrib.messages.context_processors.messages',
-            # 'django.core.context_processors.static',
            ],
         },
     },
@@ -102,9 +110,6 @@ DATABASES = {
     }
 }
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
-# postgres://USER:PASSWORD@HOST:PORT/NAME
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -144,7 +149,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles/'))
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
