@@ -28,7 +28,9 @@
 
       <p>My hero:</p>
       {% load static %} <!-- (load static files) -->
-      <p><img src="{% static 'img/hero.jpg' alt='image of THE HERO' %}"/></p>
+      <p><img src="{% static "fanarchive/img/hero.jpg" alt="image of THE HERO" %}"/></p>
+
+      <p>Go to the <a href="{% url 'fanarchive:test' %}">TEST PAGE</a>!!</p>
 
 
     </main>

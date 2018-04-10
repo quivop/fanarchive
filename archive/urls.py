@@ -28,5 +28,5 @@ urlpatterns = [
     path('fanarchive/', include('fanarchive.urls')),
 
     # redirect the base url to the fanarchive app
-    path('', RedirectView.as_view(url='/fanarchive/')),
+    path('', RedirectView.as_view(url='fanarchive/')),
 ]
