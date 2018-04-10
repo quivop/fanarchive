@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 import os
-from archive.settings import BASE_DIR, TIMES
+from archive.settings import BASE_DIR
 
 
 def TestView(request):
@@ -8,6 +8,6 @@ def TestView(request):
     base_url = BASE_DIR
     static_url = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles/'))
     debug = format(os.getenv("DEBUG"))
+    p = "<p></p>"
 
-    return HttpResponse(base_url + '<p></p>' + static_url +
-        '<p></p>' + debug)
+    return HttpResponse(base_url + p + static_url + p + debug)
