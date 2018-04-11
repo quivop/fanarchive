@@ -7,4 +7,4 @@
 #
 # Then paste the key you get below:
 
-DJANGO_SECRET_KEY="paste-key-here"
+SECRET_KEY="paste-key-here"

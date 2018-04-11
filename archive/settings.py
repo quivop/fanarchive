@@ -23,7 +23,7 @@ env_path = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=env_path)
 
 # Load SECRET_KEY from environment variable
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Turns on debugging in development environment.
