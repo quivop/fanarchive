@@ -5,6 +5,4 @@ gunicorn==19.7.1
 psycopg2-binary==2.7.4
 python-dotenv==0.8.2
 pytz==2018.3
-virtualenv==15.2.0
-virtualenv-clone==0.3.0
 whitenoise==3.3.1
