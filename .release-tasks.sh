@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # set debug environment variable
-DEBUG=False
+if [ -z "$DEBUG" ] ; then
+	DEBUG=False
+else
+	echo "-----> DEBUG variable already set. Moving on..."
+fi	
 
 # define secret key function
 function mk_secret_key () {
@@ -14,6 +18,7 @@ if [ -z "$SECRET_KEY"] ; then
 # Make a new key and stuff it into heroku's mouth:
 else
 	echo "-----> Secret key already set. Moving on..."
+fi
 
 # run database migrations
 echo "-----> Running db migrations..."
