@@ -22,8 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env_path = os.path.join(BASE_DIR, ".env")
 load_dotenv(dotenv_path=env_path)
 
-# Load SECRET_KEY from environment variable
-# SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# Load SECRET_KEY from environment variable if it is set.
+# If it is not set, use a shitty temporary key instead.
+#
+# To set a more secure secret key, run this in your command line:
+# `heroku config:set SECRET_KEY=$(python manage.py shell -c "from django.core.management import utils; print(utils.get_random_secret_key())")
+#
+# OR, run:
+# `python manage.py shell -c "from django.core.management import utils; print(utils.get_random_secret_key())"
+# And enter the resulting key printed to your console at:
+# https://dashboard.heroku.com/apps/your-app-name/settings
 
 if 'SECRET_KEY' in globals():
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -32,9 +41,12 @@ else:
 
 
 # Turns on debugging in development environment.
+#
 # To set your heroku app's DEBUG variable as false, run:
-# `heroku config:set DEBUG=False
-# Or set it at https://dashboard.heroku.com/apps/your-app-name/settings
+# `heroku config:set DEBUG=False` in your command line.
+#
+# OR, set it at:
+# https://dashboard.heroku.com/apps/your-app-name/settings
 
 DEBUG = os.environ.get('DEBUG', True)
 
