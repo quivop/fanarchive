@@ -3,7 +3,7 @@
 # set environment variables
 DEBUG=False
 
-SECRET_KEY="fakekey" # set because Django whines if you don't 
+# SECRET_KEY="fakekey" # set because Django whines if you don't 
 
 # define secret key function
 function mk_secret_key () {
@@ -11,14 +11,14 @@ function mk_secret_key () {
 } 
 
 # Make a new key and stuff it into heroku's mouth:
-echo `heroku config:set SECRET_KEY=$(mk_secret_key)`
+echo `SECRET_KEY=$(mk_secret_key)`
 
 # run database migrations
 echo "Running db migrations..."
 echo `python manage.py migrate`
 
 # notify user re how to load data
-"To load sample data into the app, type './.loaddata' into your shell, and press enter."
+# "To load sample data into the app, type './.loaddata' into your shell, and press enter."
 
 # # load test data from fixtures
 # echo -e "Do you want to load test data into the archive?\\n
