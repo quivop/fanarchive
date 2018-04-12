@@ -1,13 +1,16 @@
-from django.http import HttpResponse
-import os
-from archive.settings import BASE_DIR
+from django.views.generic import TemplateView
 
 
-def TestView(request):
-    template_name = 'test' # noqa
-    base_url = BASE_DIR
-    static_url = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles/'))
-    debug = format(os.getenv("DEBUG"))
-    p = "<p></p>"
+class TestView(TemplateView):
+    template_name = 'fanarchive/test.html' # noqa
 
-    return HttpResponse(base_url + p + static_url + p + debug)
+    def get_context_data(self):
+        context = {
+            "head1": "my first header",
+            "head2": "My second header",
+            "head3": "My THIRD header",
+            "head4": "My fourth header...",
+            "head5": "mah fifth! header",
+            "head6": "my sixth header, uwu",
+        }
+        return context
