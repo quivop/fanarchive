@@ -109,3 +109,6 @@ db.sqlite3
 # Ignore test data dumps
 dump*.json
 dump/
+
+# Ignore collected static files
+staticfiles/
