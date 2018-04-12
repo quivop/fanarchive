@@ -7,6 +7,9 @@
     <title>HELL</title>
     <meta name="viewport" content="width=device-width, initial scale=1">
 
+    {% load static %} <!-- (load static files) -->
+    <link rel="stylesheet" href="{% static 'fanarchive/css/skeleton.css?v=1' %}">
+
   </head>
   
   <body>
@@ -27,8 +30,8 @@
       {% endif %}
 
       <p>My hero:</p>
-      {% load static %} <!-- (load static files) -->
-      <p><img src="{% static "fanarchive/img/hero.jpg" alt="image of THE HERO" %}"/></p>
+      
+      <p><img src="{% static 'fanarchive/img/hero.jpg' %}" alt='image of THE HERO'/></p>
 
       <p>Go to the <a href="{% url 'fanarchive:test' %}">TEST PAGE</a>!!</p>
 
