@@ -1,44 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "fanarchive/base.html" %}
+{% load static %}
 
-  <head>
+{% block title %}HELL WELCOMES U{% endblock title%}
 
-    <meta charset="utf-8">
-    <title>HELL</title>
-    <meta name="viewport" content="width=device-width, initial scale=1">
+{% block content %}
+  <h2>Latest fic list</h3>
+  {% if latest_fic_list %}
+  <ul>
+    {% for fic in latest_fic_list %}
+    <li><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No fics are available <strong>:sadface:</strong>.</p>
+  {% endif %}
 
-    {% load static %} <!-- (load static files) -->
-    <link rel="stylesheet" href="{% static 'fanarchive/css/skeleton.css?v=1' %}">
-
-  </head>
+  <p>My hero:</p>
   
-  <body>
-    
-  <div class="container">
+  <p><img src="{% static 'fanarchive/img/hero.jpg' %}" alt='image of THE HERO'/></p>
 
-    <main>
-      <p>Welcome to the FAN ARCHIVE.</p>
+  <p>Go to the <a href="{% url 'fanarchive:test' %}">TEST PAGE</a>!!</p>
 
-      {% if latest_fic_list %}
-      <ul>
-        {% for fic in latest_fic_list %}
-        <li><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></li>
-        {% endfor %}
-      </ul>
-      {% else %}
-      <p>No fics are available <strong>:sadface:</strong>.</p>
-      {% endif %}
-
-      <p>My hero:</p>
-      
-      <p><img src="{% static 'fanarchive/img/hero.jpg' %}" alt='image of THE HERO'/></p>
-
-      <p>Go to the <a href="{% url 'fanarchive:test' %}">TEST PAGE</a>!!</p>
-
-
-    </main>
-
-  </div>
-
-  </body>
-</html>
+{% endblock content %}
