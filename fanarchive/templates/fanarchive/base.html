@@ -10,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial scale=1">
 
     <title>
-      {% block title %}BASE HELL{% endblock title %}
-      {% block extratitle %}&nbsp;|&nbsp;fanarchive{% endblock extratitle }
+      {% block title %}BASE HELL
+      {% endblock title %}
+
     </title>
 
     {% block stylesheets %}
@@ -32,7 +33,7 @@
         {% block site_nav_links %}
         <a href="{% url 'fanarchive:index' %}">Home</a>
         <a href="{% url 'fanarchive:test' %}">Test page</a>
-        <a href="{% url 'admin' %}">Admin panel</a>
+        <a href="{% url 'admin:index' %}">Admin panel</a>
         {% endblock site_nav_links %}
       </nav>
     </header>
