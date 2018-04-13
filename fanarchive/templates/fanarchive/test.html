@@ -1,48 +1,34 @@
-<!DOCTYPE html>
+{% extends "fanarchive/base.html" %}
 
-<html lang="en">
+{% block title %}TEST ME{% endblock title%}
 
-  <head>
+{% block site_nav_links %}
+  {{ block.super }}
+  <a href="https://www.google.com" title="go with google god">GO TO GOOGLE!!</a>
+{% endblock site_nav_links %}
 
-    <meta charset="utf-8">
-    <title>Test page!!</title>
-    <meta name="viewport" content="width=device-width, initial scale=1">
+{% block content %}
+  <h1>{{ head1|title }}</h1>
 
-  </head>
-  
-  <body>
-    
-  <div class="container">
+  <p>{% lorem 2 p %}</p>
 
-    <main>
-      <h1>{{ head1|title }}</h1>
+  <h2>{{ head2|title }}</h2>
 
-      <p>{% lorem 2 p %}</p>
+  <p>{% lorem 2 p random %}</p>
 
-      <h2>{{ head2|title }}</h2>
+  <h3>{{ head3|title }}</h3>
 
-      <p>{% lorem 2 p random %}</p>
+  <p>{% lorem 2 p random %}</p>
 
-      <h3>{{ head3|title }}</h3>
+  <h4>{{ head4|title }}</h4>
 
-      <p>{% lorem 2 p random %}</p>
+  <p>{% lorem 2 p random %}</p>
 
-      <h4>{{ head4|title }}</h4>
+  <h5>{{ head5|title }}</h5>
 
-      <p>{% lorem 2 p random %}</p>
+  <p>{% lorem 2 p random %}</p>
 
-      <h5>{{ head5|title }}</h5>
+  <h6>{{ head6|title }}</h6>
 
-      <p>{% lorem 2 p random %}</p>
-
-      <h6>{{ head6|title }}</h6>
-
-      <p>{% lorem 2 p random %}</p>
-
-
-    </main>
-
-  </div>
-
-  </body>
-</html>
+  <p>{% lorem 2 p random %}</p>
+{% endblock content %}
