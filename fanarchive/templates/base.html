@@ -1,0 +1,52 @@
+{# simple base html file #}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+
+    <title>
+      {% block title %}BASE HELL
+      {% endblock title %}
+
+    </title>
+
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/normalize.css?v=1' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/skeleton.css?v=1' %}">
+    {% endblock stylesheets %}
+  </head>
+  
+  <body>
+    
+  <div class="container">
+
+    <header id="site_title">
+      {% block sitetitle %}
+      <h1>Fan Archive</h1>
+      {% endblock sitetitle %}
+
+      <nav id="site_nav">
+        {% block site_nav_links %}
+        <a href="{% url 'fanarchive:index' %}">Home</a>
+        <a href="{% url 'fanarchive:test' %}">Test page</a>
+        <a href="{% url 'admin:index' %}">Admin panel</a>
+        {% endblock site_nav_links %}
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}
+      <h2>Welcome!!</h2>
+
+      <p>Welcome to the FAN ARCHIVE MACHINE BASE TEMPLATE YO.</p>
+      {% endblock content %}
+    </main>
+  </div>
+
+  </body>
+</html>
