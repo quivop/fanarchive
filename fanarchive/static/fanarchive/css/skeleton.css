@@ -188,7 +188,7 @@ p {
 /* fic_meta */
 
 .fic_meta h2 { font-size: 3rem; padding-left: 10px }
-.fic_meta ul { padding-left: 10px; }
+.fic_meta ul { padding: 5px 10px; }
 .fic_meta ul li { list-style-type: none; }
 div.fic_meta {
   border: 1px dotted #ccc;
