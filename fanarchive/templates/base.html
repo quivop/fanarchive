@@ -17,7 +17,7 @@
 
     {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/normalize.css?v=1' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/skeleton.css?v=1' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/skeleton.css?v=1.0' %}">
     {% endblock stylesheets %}
   </head>
   
@@ -32,9 +32,9 @@
 
       <nav id="site_nav">
         {% block site_nav_links %}
-        <a href="{% url 'fanarchive:index' %}">Home</a>
-        <a href="{% url 'fanarchive:test' %}">Test page</a>
-        <a href="{% url 'admin:index' %}">Admin panel</a>
+        <a class="" href="{% url 'fanarchive:index' %}">Home</a>
+        <a class="" href="{% url 'fanarchive:test' %}">Test page</a>
+        <a class="" href="{% url 'admin:index' %}">Admin panel</a>
         {% endblock site_nav_links %}
       </nav>
     </header>
