@@ -1,45 +1,34 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
 
-<html lang="en">
+{% block title %}{{ fic.fic_title|title }} | Fanarchive{% endblock title%}
 
-  <head>
-
-    <meta charset="utf-8">
-    <title>{{ fic.fic_title }}</title>
-    <meta name="viewport" content="width=device-width, initial scale=1">
-
-  </head>
-  
-  <body>
-    
-  <div class="container">
-
-    <main>
+{% block content %}
       <!-- but no titlecase here -->
-      <h1>{{ fic.fic_title }}</h1>
-      
-      <p><strong>Fic summary:</strong> {{ fic.fic_summary }}</p>
-
-      <p><strong>Fic created on:</strong> {{ fic.pub_date }}</p>
-
-      <!-- if the Fic has any FicParts -->
-      {% if fic.ficpart_set.count > 0 %}
-      
-      <!-- list them -->
-      {% for ficpart in fic.ficpart_set.all %}
-      <article><h3>Part {{ forloop.counter }}: {{ ficpart.fic_part_title }}</h3>
-        <p>{{ ficpart.fic_part_text }}</p>
-      </article>
-      {% endfor %}
-      
-      <!-- else, give the user a sad message -->
-      {% else %}
-      <p>I'm sorry, <strong>{{ fic.fic_title }}</strong> has no fic parts available.</p>
-      {% endif %}
-
-    </main>
-
+  <div class="fic_meta">
+    <h2>{{ fic.fic_title }}</h2>
+    <ul>
+      <li><strong>Fic summary:</strong> {{ fic.fic_summary }}</li>
+      <li><strong>Fic created on:</strong> {{ fic.pub_date }}</li>
+    </ul>
   </div>
 
-  </body>
-</html>
+  <!-- if the Fic has any FicParts -->
+  {% if fic.ficpart_set.count > 0 %}
+  
+  <!-- list them -->
+  {% for ficpart in fic.ficpart_set.all %}
+  <hr>
+  <article class="fic_part">
+    <h3>Part {{ forloop.counter }}: {{ ficpart.fic_part_title }}</h3>
+    <p>{{ ficpart.fic_part_text }}</p>
+  </article>
+  {% endfor %}
+  
+  <!-- else, give the user a sad message -->
+  {% else %}
+  <p class="fic_part warning">I'm sorry, <strong>{{ fic.fic_title }}</strong> has no fic parts available.</p>
+  {% endif %}
+
+  <hr>
+{% endblock content %}
