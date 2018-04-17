@@ -19,6 +19,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/normalize.css?v=1' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanarchive/css/skeleton.css?v=1.0' %}">
     {% endblock stylesheets %}
+
+    {% block favicons %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'fanarchive/img/favicon.ico' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'fanarchive/img/favicon-32x32.png' %}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{% static 'fanarchive/img/favicon-16x16.png' %}" sizes="16x16" />
+    {% endblock favicons %}
   </head>
   
   <body>
