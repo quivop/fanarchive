@@ -124,7 +124,7 @@ body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: Helvetica, sans-serif; /* go away new fonts~ */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: #111; }
 
 
@@ -358,6 +358,20 @@ ol ul {
 li {
   margin-bottom: 1rem; }
 
+/* latest_fic_list */
+
+.latest_fic_list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.latest_fic_list li {
+  border: 1px dotted #ccc;
+  padding: .5em;
+}
+.latest_fic_list.meta {
+  color: #666;
+}
+.latest_fic_list li p { margin-bottom: .5rem; }
 
 
 /* Code
@@ -411,6 +425,7 @@ ul,
 ol,
 form {
   margin-bottom: 2.5rem; }
+li p { margin-bottom: 1.5rem; }
 
 
 /* Utilities
