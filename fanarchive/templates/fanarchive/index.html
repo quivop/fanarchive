@@ -6,14 +6,17 @@
 {% block content %}
   <h2>Latest fic list</h3>
   {% if latest_fic_list %}
-  <ul class="latest_fic_list">
+  <section class="latest_fic_list">
     {% for fic in latest_fic_list %}
-    <li><p><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></p>
-        <p>{{ fic.fic_summary }}</p>
-        <p class="latest_fic_list meta">posted {{ fic.pub_date|date }}</p>
-    </li>
+    <article class="fic latest_fic_list">
+      <h3><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></h3>
+      <p>{{ fic.fic_summary }}</p>
+      <div class="latest_fic_list meta">
+        <p>posted {{ fic.pub_date|date }}</p>
+      </div>
+    </article>
     {% endfor %}
-  </ul>
+  </section>
   {% else %}
   <p>No fics are available <strong>:sadface:</strong>.</p>
   {% endif %}
