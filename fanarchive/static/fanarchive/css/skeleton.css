@@ -343,11 +343,11 @@ label > .label-body {
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: circle inside; }
+  list-style: circle outside; }
 ol {
-  list-style: decimal inside; }
+  list-style: decimal outside; }
 ol, ul {
-  padding-left: 0;
+  padding-left: 1.2em;
   margin-top: 0; }
 ul ul,
 ul ol,
@@ -357,6 +357,7 @@ ol ul {
   font-size: 90%; }
 li {
   margin-bottom: 1rem; }
+
 
 
 /* Code
