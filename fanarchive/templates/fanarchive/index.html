@@ -9,7 +9,7 @@
   <ul>
     {% for fic in latest_fic_list %}
     <li><p><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></p>
-    <p>Posted on {{ fic.pub_date }}</p>
+    <p>Posted on {{ fic.pub_date|date }}</p>
         <p>{{ fic.fic_summary }}</p></li>
     {% endfor %}
   </ul>
