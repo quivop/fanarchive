@@ -48,7 +48,7 @@ else:
 # OR, set it at:
 # https://dashboard.heroku.com/apps/your-app-name/settings
 
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 
 
 # Logging
