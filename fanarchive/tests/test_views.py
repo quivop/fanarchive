@@ -2,7 +2,6 @@ from datetime import timedelta
 from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
-from django.http import HttpResponseServerError
 
 from fanarchive.models import Fic, FicPart
 
