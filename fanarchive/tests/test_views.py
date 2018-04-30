@@ -89,3 +89,28 @@ class ErrorViewTest(TestCase):
         # leaving this a stub test because it needs selenium to function correctly.
 
         pass
+
+
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.firefox.webdriver import WebDriver
+
+class MySeleniumTests(StaticLiveServerTestCase):
+    fixtures = ['initial_data.json']
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.selenium = WebDriver()
+        cls.selenium.implicitly_wait(10)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super().tearDownClass()
+
+    def test_latest_fics_displayed(self):
+        # open homepage
+        self.selenium.get('%s%s' % (
+            self.live_server_url, ''))
+        # check that the 'no fics' error is not displayed
+        assert "No fics are available <strong>:sadface:</strong>." not in self.selenium.page_source
