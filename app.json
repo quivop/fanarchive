@@ -2,7 +2,6 @@
   "name": "Fanarchive",
   "description": "Modern software for archiving fanwork",
   "repository": "https://github.com/quivop/fanarchive",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["archive", "fanfiction", "fanart"],
   "env": {
   	"SECRET_KEY": {
