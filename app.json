@@ -1,0 +1,18 @@
+{
+  "name": "Fanarchive",
+  "description": "Modern software for archiving fanwork",
+  "repository": "https://github.com/quivo/fanarchive",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["archive", "fanfiction", "fanart"],
+  "env": {
+  	"SECRET_KEY": {
+  		"description": "The secret key Django uses to for security",
+  		"value": "replace_this_asap!"
+  	}
+  },
+  "buildpacks": [
+  	{
+  		"url": "https://github.com/heroku/heroku-buildpack-python"
+  	}
+  ],
+}
