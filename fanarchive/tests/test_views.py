@@ -91,10 +91,14 @@ class ErrorViewTest(TestCase):
         pass
 
 
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+# make sure to run:
+# `python manage.py collectstatic`
+# *before* running these tests
+
+from django.test import LiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
 
-class MySeleniumTests(StaticLiveServerTestCase):
+class MySeleniumTests(LiveServerTestCase):
     fixtures = ['initial_data.json']
 
     @classmethod
