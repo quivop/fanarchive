@@ -7,6 +7,6 @@ urlpatterns = [
     # pointing to dynamic index view
     path('', views.IndexView.as_view(), name='index'),
     # pointing to /fanarchive/5/
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('fic/<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('test/', views.TestView.as_view(), name='test'),
 ]
