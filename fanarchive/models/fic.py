@@ -11,5 +11,7 @@ class Fic(models.Model):
     date_updated = models.DateTimeField('date updated', default=timezone.now)
 
     def __str__(self):
-        # returns title of the Fic when called by __str__() method
+        """
+        String for representing the Model object
+        """
         return self.fic_title
