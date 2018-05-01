@@ -15,3 +15,9 @@ class Fic(models.Model):
         String for representing the Model object
         """
         return self.fic_title
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access the detail page for this fanfic
+        """
+        return '/fic/%f/' % self.fic_id
