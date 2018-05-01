@@ -2,7 +2,6 @@ from datetime import timedelta
 from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
-from django.http import HttpResponseServerError
 
 from fanarchive.models import Fic, FicPart
 
@@ -85,8 +84,3 @@ class ErrorViewTest(TestCase):
         resp = self.client.get('/yay_404')
         self.assertEqual(resp.status_code, 404)
         self.assertTemplateUsed(resp, '404.html')
-
-    def test_if_500_error_is_handled_correctly(self):
-        # leaving this a stub test because it needs selenium to function correctly.
-
-        pass
