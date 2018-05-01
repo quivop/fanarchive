@@ -67,9 +67,6 @@ class DetailViewTest(TestCase):
     def test_detail_view_displays_fic_and_fic_part(self):
         pass
 
-from django.http import HttpResponseServerError
-from django.contrib.auth.models import AnonymousUser
-from django.test import RequestFactory
 
 class ErrorViewTest(TestCase):
 
@@ -83,54 +80,7 @@ class ErrorViewTest(TestCase):
                 fic_summary='Butts',
                 pub_date=(timezone.now() - timedelta(days=fic_num)))
 
-    @classmethod
-    def setUp(self):
-        # give every test a fake request
-        self.factory = RequestFactory()
-
     def test_if_404_error_is_handled_correctly(self):
         resp = self.client.get('/yay_404')
         self.assertEqual(resp.status_code, 404)
         self.assertTemplateUsed(resp, '404.html')
-
-    def test_if_500_error_is_handled_correctly(self):
-        # leaving this a stub test because it needs selenium to function correctly.
-        request = self.factory.get('butts')
-        request.user = AnonymousUser()
-
-        def my_test_500_view(request):
-            # return a 500 Internal Server Error code
-            return HttpResponseServerError()
-
-        resp = my_test_500_view(request)
-        self.assertEqual(resp.status_code, 500)
-        # self.assertTemplateUsed(resp, '500.html')
-
-
-# make sure to run:
-# `python manage.py collectstatic`
-# *before* running these tests
-
-from django.test import LiveServerTestCase
-from selenium.webdriver.firefox.webdriver import WebDriver
-
-class MySeleniumTest(LiveServerTestCase):
-    fixtures = ['initial_data.json']
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.selenium = WebDriver()
-        cls.selenium.implicitly_wait(10)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.selenium.quit()
-        super().tearDownClass()
-
-    def test_latest_fics_displayed(self):
-        # open homepage
-        self.selenium.get('%s%s' % (
-            self.live_server_url, ''))
-        # check that the 'no fics' error is not displayed
-        assert "No fics are available <strong>:sadface:</strong>." not in self.selenium.page_source
