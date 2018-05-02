@@ -9,7 +9,8 @@ class FicPart(models.Model):
     fic = models.ForeignKey('Fic', on_delete=models.CASCADE)
 
     # FicParts have part numbers
-    fic_part_number = models.PositiveIntegerField()
+    fic_part_number = models.PositiveIntegerField(
+        'fic part number', null=True)
 
     def __str__(self):
         # returns title of the FicPart when called by __str__()
