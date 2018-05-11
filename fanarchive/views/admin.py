@@ -1,7 +1,10 @@
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
-from .forms import EditFicForm
+
+from fanarchive.forms import EditFicForm
+from fanarchive.models import Fic
 
 
-def FicEditView(request):
+def FicEditingView(request):
     return HttpResponse("This will be a form. someday...")
