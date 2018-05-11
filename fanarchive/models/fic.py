@@ -11,5 +11,14 @@ class Fic(models.Model):
     date_updated = models.DateTimeField('date updated', default=timezone.now)
 
     def __str__(self):
-        # returns title of the Fic when called by __str__() method
+        """
+        String for representing the Model object
+        """
         return self.fic_title
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access the detail page for this fanfic
+        """
+        from django.urls import reverse
+        return reverse('fanarchive:detail', args=[str(self.id)])
