@@ -9,5 +9,5 @@ urlpatterns = [
     # pointing to /fanarchive/5/
     path('fic/<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('test/', views.TestView.as_view(), name='test'),
-    path('admin/edit/', views.FicEditingView, name='fic-editing-view'),
+    path('admin/<int:pk>/edit/', views.FicEditingView, name='fic-editing-view'),
 ]
