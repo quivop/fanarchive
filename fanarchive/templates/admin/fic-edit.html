@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Edit {{ fic_to_edit.fic_title|title }} | Fanarchive{% endblock title%}
+
+{% block content %}
+
+<h2>Edit {{ fic_to_edit.fic_title|title }}</h2>
+
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Submit!" />
+</form>
+
+{% endblock content %}
