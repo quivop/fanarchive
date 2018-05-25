@@ -65,11 +65,10 @@ class DetailViewTest(TestCase):
         Fic.objects.create(
             fic_title="Back from the future",
             fic_summary="Yes, I know we're in the past")
-        FicPart.Objects.create(
+        FicPart.objects.create(
             fic_part_title="the future but not like too far",
             fic_part_text="just like next week or something",
-            fic_id=3,
-            fic_part_)
+            fic_id=3)
 
 
     def test_detail_view_url_exists_at_desired_location(self):
@@ -85,7 +84,7 @@ class DetailViewTest(TestCase):
 
     def test_detail_view_displays_fic_part_warning(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[2]))
-        
+
 
     def test_detail_view_does_not_show_future_dated_parts(self):
         pass
