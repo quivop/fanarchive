@@ -57,14 +57,39 @@ class DetailViewTest(TestCase):
             fic_part_title="butt beginnings",
             fic_part_text="and so there was, in the beginning, a butt",
             fic_id=1)
+        # create a fic with no parts
+        Fic.objects.create(
+            fic_title="Big bara tiddies", 
+            fic_summary="better than butts")
+        # create a fic with future parts
+        Fic.objects.create(
+            fic_title="Back from the future",
+            fic_summary="Yes, I know we're in the past")
+        FicPart.objects.create(
+            fic_part_title="the future but not like too far",
+            fic_part_text="just like next week or something",
+            fic_id=3)
+
 
     def test_detail_view_url_exists_at_desired_location(self):
-        pass
+        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+        self.assertEqual(resp.status_code, 200)
 
     def test_if_detail_view_uses_correct_template(self):
-        pass
+        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+        self.assertTemplateUsed(resp, 'fanarchive/detail.html')
 
     def test_detail_view_displays_fic_and_fic_part(self):
+        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+
+    def test_detail_view_displays_fic_part_warning(self):
+        resp = self.client.get(reverse('fanarchive:detail', args=[2]))
+
+
+    def test_detail_view_does_not_show_future_dated_parts(self):
+        pass
+
+    def test_detail_view_displays_fic_parts_in_order(self):
         pass
 
 
