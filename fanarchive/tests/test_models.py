@@ -32,27 +32,27 @@ class FicModelTest(TestCase):
     def test_fic_title_label(self):
         fic = Fic.objects.get(id=1)
         field_label = fic._meta.get_field('fic_title').verbose_name
-        self.assertEquals(field_label, 'fic title')
+        self.assertEqual(field_label, 'fic title')
 
     def test_fic_summary_label(self):
         fic = Fic.objects.get(id=1)
         field_label = fic._meta.get_field('fic_summary').verbose_name
-        self.assertEquals(field_label, 'fic summary')
+        self.assertEqual(field_label, 'fic summary')
 
     def test_pub_date_label(self):
         fic = Fic.objects.get(id=1)
         field_label = fic._meta.get_field('pub_date').verbose_name
-        self.assertEquals(field_label, 'date published')
+        self.assertEqual(field_label, 'date published')
 
     def test_date_updated_label(self):
         fic = Fic.objects.get(id=1)
         field_label = fic._meta.get_field('date_updated').verbose_name
-        self.assertEquals(field_label, 'date updated')
+        self.assertEqual(field_label, 'date updated')
 
     def test_object_name_is_fic_title(self):
         fic = Fic.objects.get(id=1)
         expected_object_name = '%s' % (fic.fic_title)
-        self.assertEquals(expected_object_name, str(fic))
+        self.assertEqual(expected_object_name, str(fic))
 
     def test_pub_date_is_today(self):
         # also checks that a default date is being set at all
@@ -79,28 +79,28 @@ class FicModelTest(TestCase):
     def test_fic_title_max_length(self):
         fic = Fic.objects.get(id=1)
         max_length = fic._meta.get_field('fic_title').max_length
-        self.assertEquals(max_length, 200)
+        self.assertEqual(max_length, 200)
 
     # FicPart tests
     def test_fic_part_title_label(self):
         fic_part = FicPart.objects.get(id=1)
         field_label = fic_part._meta.get_field('fic_part_title').verbose_name
-        self.assertEquals(field_label, 'fic part title')
+        self.assertEqual(field_label, 'fic part title')
 
     def test_fic_part_text_label(self):
         fic_part = FicPart.objects.get(id=1)
         field_label = fic_part._meta.get_field('fic_part_text').verbose_name
-        self.assertEquals(field_label, 'fic part text')
+        self.assertEqual(field_label, 'fic part text')
 
     def test_fic_part_title_max_length(self):
         fic_part = FicPart.objects.get(id=1)
         max_length = fic_part._meta.get_field('fic_part_title').max_length
-        self.assertEquals(max_length, 200)
+        self.assertEqual(max_length, 200)
 
     def test_fic_part_is_related_to_correct_fic(self):
         fic_part = FicPart.objects.get(id=1)
         fic_id = fic_part.fic_id
-        self.assertEquals(fic_id, 1)
+        self.assertEqual(fic_id, 1)
 
 
 # FUTURE TESTS #
