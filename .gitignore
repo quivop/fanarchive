@@ -86,9 +86,6 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
-bin/
-include/
-pip-selfcheck.json
 
 # Spyder project settings
 .spyderproject
