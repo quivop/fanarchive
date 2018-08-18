@@ -55,7 +55,9 @@ def calc_fic_part_number(fic_id, fic_part=None,
     part_list = ordered_parts.values_list(
         'fic_part_number', flat=True)
 
-    if fic_part_number is None and part_list[0] is None:
+    # checking part_list length fixes index out of range without changing current behavior
+    # if this function is used outside of the save call, may want a 0 length part list to return None.
+    if len(part_list) == 0 or (fic_part_number is None and part_list[0] is None):
         return 1
     elif ((fic_part_number == 0) or (fic_part_number == 1)) and count == 1:
         return 1
