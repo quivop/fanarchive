@@ -168,6 +168,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# SSL stuff
+
+SECURE_SSL_REDIRECT = True
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+# Heroku-specific SSL setting
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Importing all heroku specific settings (will not show up in dev~)
 
 django_heroku.settings(locals())
