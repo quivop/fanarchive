@@ -59,7 +59,7 @@ class DetailViewTest(TestCase):
             fic_id=1)
         # create a fic with no parts
         Fic.objects.create(
-            fic_title="Big bara tiddies", 
+            fic_title="Big bara tiddies",
             fic_summary="better than butts")
         # create a fic with future parts
         Fic.objects.create(
@@ -69,7 +69,6 @@ class DetailViewTest(TestCase):
             fic_part_title="the future but not like too far",
             fic_part_text="just like next week or something",
             fic_id=3)
-
 
     def test_detail_view_url_exists_at_desired_location(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[1]))
@@ -84,7 +83,6 @@ class DetailViewTest(TestCase):
 
     def test_detail_view_displays_fic_part_warning(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[2]))
-
 
     def test_detail_view_does_not_show_future_dated_parts(self):
         pass
