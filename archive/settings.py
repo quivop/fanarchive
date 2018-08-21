@@ -88,10 +88,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Registering the Fanarchive app
-    'fanfic.apps.FanficConfig',
     # Adding ssl server for development
     'sslserver',
+    # Registering archive apps
+    'fanfic',
 ]
 
 MIDDLEWARE = [
