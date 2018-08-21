@@ -137,6 +137,10 @@ DATABASES = {
 }
 
 
+# Custom user model
+
+AUTH_USER_MODEL = 'users.ArchiveUser'
+
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
