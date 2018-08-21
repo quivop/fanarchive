@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     # Registering archive apps
     'fanfic',
     'users',
+    'pseuds',
 ]
 
 MIDDLEWARE = [
