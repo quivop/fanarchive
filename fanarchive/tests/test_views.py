@@ -1,20 +1,32 @@
 from datetime import timedelta
-from django.test import Client, TestCase
+from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
 from fanarchive.models import Fic, FicPart
 
-
-class UnitTestClient(Client):
-    def get(self, *args, **kwargs):
-        """Request a response from the server using GET."""
-        response = super().get(secure=True, *args, **kwargs)
-        return response
+from django.test.utils import override_settings
 
 
-class IndexViewTest(TestCase):
-    client_class = UnitTestClient
+class MyTestCase(TestCase):
+    settings_mgr = override_settings(SECURE_SSL_REDIRECT=False,
+                                     CSRF_COOKIE_SECURE=False,
+                                     SESSION_COOKIE_SECURE=False)
+
+    @classmethod
+    def setUpClass(cls):
+        cls.settings_mgr.enable()
+
+        super().setUpClass()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.settings_mgr.disable()
+
+        super().tearDownClass()
+
+
+class IndexViewTest(MyTestCase):
 
     @classmethod
     def setUpTestData(cls):
@@ -48,8 +60,7 @@ class IndexViewTest(TestCase):
         self.assertTemplateUsed(resp, 'fanarchive/index.html')
 
 
-class DetailViewTest(TestCase):
-    client_class = UnitTestClient
+class DetailViewTest(MyTestCase):
 
     @classmethod
     def setUpTestData(cls):
@@ -96,8 +107,7 @@ class DetailViewTest(TestCase):
         pass
 
 
-class ErrorViewUnitTest(TestCase):
-    client_class = UnitTestClient
+class ErrorViewUnitTest(MyTestCase):
 
     @classmethod
     def setUpTestData(cls):
