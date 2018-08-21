@@ -9,6 +9,7 @@ class Fic(models.Model):
     # default both date fields to now
     pub_date = models.DateTimeField('date published', default=timezone.now)
     date_updated = models.DateTimeField('date updated', default=timezone.now)
+    fic_author_group = models.ForeignKey('AuthorGroup', on_delete=models.CASCADE)
 
     def __str__(self):
         """
@@ -22,3 +23,25 @@ class Fic(models.Model):
         """
         from django.urls import reverse
         return reverse('fanfic:detail', args=[str(self.id)])
+
+    def get_fic_authors(self):
+        """
+        Returns a list of the fic author(s)
+        """
+        pass
+
+
+class AuthorGroup(models.Model):
+    authors = models.ManyToManyField(
+        'pseuds.Pseud',
+        through='Authorship',
+    )
+
+
+class Authorship(models.Model):
+    author_group = models.ForeignKey(
+        'AuthorGroup',
+        on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        'pseuds.Pseud',
+        on_delete=models.CASCADE)
