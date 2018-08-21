@@ -90,6 +90,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
     'fanarchive.apps.FanarchiveConfig',
+    # Adding ssl server for development
+    'sslserver',
 ]
 
 MIDDLEWARE = [
@@ -176,9 +178,6 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_SECURE = True
 
-# Heroku-specific SSL setting
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Importing all heroku specific settings (will not show up in dev~)
 
