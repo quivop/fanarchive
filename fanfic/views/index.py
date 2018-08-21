@@ -1,10 +1,10 @@
 from django.views import generic
 
-from fanarchive.models import Fic
+from fanfic.models import Fic
 
 
 class IndexView(generic.ListView):
-    template_name = 'fanarchive/index.html'
+    template_name = 'fanfic/index.html'
     context_object_name = 'latest_fic_list'
 
     def get_queryset(self):

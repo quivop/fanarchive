@@ -89,7 +89,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Registering the Fanarchive app
-    'fanarchive.apps.FanarchiveConfig',
+    'fanfic.apps.FanficConfig',
     # Adding ssl server for development
     'sslserver',
 ]

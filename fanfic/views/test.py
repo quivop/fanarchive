@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 
 
 class TestView(TemplateView):
-    template_name = 'fanarchive/test.html' # noqa
+    template_name = 'fanfic/test.html' # noqa
 
     def get_context_data(self):
         context = {

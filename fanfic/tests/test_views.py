@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from fanarchive.models import Fic, FicPart
+from fanfic.models import Fic, FicPart
 
 from django.test.utils import override_settings
 
@@ -38,26 +38,18 @@ class IndexViewTest(MyTestCase):
                 fic_summary='Butts',
                 pub_date=(timezone.now() - timedelta(days=fic_num)))
 
-    def test_if_site_homepage_redirects_to_fanarchive(self):
-        '''Going to 'archive.homepage/' should redirect you to the '/fanarchive/' app directory.
-        '''
-        pass
-        # resp = self.client.get('')
-        # self.assertRedirects(
-        #     resp, expected_url="/fanarchive/")
-
     def test_view_url_exists_at_desired_location(self):
-        resp = self.client.get('/fanarchive/')
+        resp = self.client.get('/archive/')
         self.assertEqual(resp.status_code, 200)
 
     def test_view_url_accessible_by_name(self):
-        resp = self.client.get(reverse('fanarchive:index'))
+        resp = self.client.get(reverse('fanfic:index'))
         self.assertEqual(resp.status_code, 200)
 
     def test_if_index_view_uses_correct_template(self):
-        resp = self.client.get(reverse('fanarchive:index'))
+        resp = self.client.get(reverse('fanfic:index'))
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'fanarchive/index.html')
+        self.assertTemplateUsed(resp, 'fanfic/index.html')
 
 
 class DetailViewTest(MyTestCase):
@@ -87,12 +79,12 @@ class DetailViewTest(MyTestCase):
             fic_id=3)
 
     def test_detail_view_url_exists_at_desired_location(self):
-        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+        resp = self.client.get(reverse('fanfic:detail', args=[1]))
         self.assertEqual(resp.status_code, 200)
 
     def test_if_detail_view_uses_correct_template(self):
-        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
-        self.assertTemplateUsed(resp, 'fanarchive/detail.html')
+        resp = self.client.get(reverse('fanfic:detail', args=[1]))
+        self.assertTemplateUsed(resp, 'fanfic/detail.html')
 
     def test_detail_view_displays_fic_and_fic_part(self):
         pass

@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from fanarchive.forms import EditFicForm
-from fanarchive.models import Fic
+from fanfic.forms import EditFicForm
+from fanfic.models import Fic
 
 
 def FicEditingView(request, pk):
@@ -19,7 +19,7 @@ def FicEditingView(request, pk):
             fic_id = fic_to_edit.id
 
             # redirect to the edited fic because why not:
-            return HttpResponseRedirect(reverse('fanarchive:index'))
+            return HttpResponseRedirect(reverse('fanfic:index'))
     else:
         original_title = fic_to_edit.fic_title
         form = EditFicForm(initial={'fic_title': original_title})

@@ -21,4 +21,4 @@ class Fic(models.Model):
         Returns the url to access the detail page for this fanfic
         """
         from django.urls import reverse
-        return reverse('fanarchive:detail', args=[str(self.id)])
+        return reverse('fanfic:detail', args=[str(self.id)])
