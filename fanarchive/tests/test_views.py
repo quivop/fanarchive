@@ -5,9 +5,6 @@ from django.utils import timezone
 
 from fanarchive.models import Fic, FicPart
 
-from selenium import webdriver
-from django.test import LiveServerTestCase
-
 
 class UnitTestClient(Client):
     def get(self, *args, **kwargs):
@@ -116,24 +113,3 @@ class ErrorViewUnitTest(TestCase):
         resp = self.client.get('/yay_404')
         self.assertEqual(resp.status_code, 404)
         self.assertTemplateUsed(resp, '404.html')
-
-
-class SeleniumTest(LiveServerTestCase):
-
-    @classmethod
-    def setUp(cls):
-        cls.browser = webdriver.Firefox()
-        cls.browser.implicitly_wait(10)
-        cls.browser.profile = webdriver.FirefoxProfile()
-        cls.browser.profile.accept_untrusted_certs = True
-        super().setUpClass()
-
-    @classmethod
-    def tearDown(cls):
-        cls.browser.quit()
-
-    def test_if_site_is_served_securely(self):
-        self.browser.get(self.live_server_url)
-
-        self.assertIn("https://127.0.0.1:8000", self.browser.current_url)
-        self.fail('your fics are not secure!!')
