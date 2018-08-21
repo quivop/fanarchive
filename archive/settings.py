@@ -92,6 +92,7 @@ INSTALLED_APPS = [
     'sslserver',
     # Registering archive apps
     'fanfic',
+    'users',
 ]
 
 MIDDLEWARE = [
