@@ -3,8 +3,13 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from fanarchive.models import Fic, FicPart
+from bs4 import BeautifulSoup
 
+import logging
+from contextlib import contextmanager
+
+from fanarchive.models import Fic, FicPart
+from fanarchive.views import DetailView
 
 class IndexViewTest(TestCase):
 
@@ -46,6 +51,27 @@ class IndexViewTest(TestCase):
 
 class DetailViewTest(TestCase):
 
+    # from https://stackoverflow.com/questions/36456827/logging-output-running-django-tests-under-pycharm
+    @contextmanager
+    def streamhandler_to_console(lggr):
+        # Use 'up to date' value of sys.stdout for StreamHandler,
+        # as set by test runner.
+        stream_handler = logging.StreamHandler(sys.stdout)
+        lggr.addHandler(stream_handler)
+        yield
+        lggr.removeHandler(stream_handler)
+
+    def testcase_log_console(lggr):
+        def testcase_decorator(func):
+            def testcase_log_console(*args, **kwargs):
+                with streamhandler_to_console(lggr):
+                    return func(*args, **kwargs)
+            return testcase_log_console
+        return testcase_decorator
+
+    logging.basicConfig(filename='test_views.log', level=logging.DEBUG)
+    logger = logging.getLogger('django_test')
+
     @classmethod
     def setUpTestData(cls):
         # create a fic
@@ -61,15 +87,27 @@ class DetailViewTest(TestCase):
         Fic.objects.create(
             fic_title="Big bara tiddies", 
             fic_summary="better than butts")
-        # create a fic with future parts
+        # create a fic with multiple parts
         Fic.objects.create(
             fic_title="Back from the future",
             fic_summary="Yes, I know we're in the past")
         FicPart.objects.create(
             fic_part_title="the future but not like too far",
             fic_part_text="just like next week or something",
-            fic_id=3)
-
+            fic_id=3,
+            fic_part_number=1)
+        FicPart.objects.create(
+            fic_part_title="the past",
+            fic_part_text="it's another country",
+            fic_id=3,
+            fic_part_number=2
+            )
+        FicPart.objects.create(
+            fic_part_title="the far future",
+            fic_part_text="au: still no hoverboards",
+            fic_id=3,
+            fic_part_number=3
+            )
 
     def test_detail_view_url_exists_at_desired_location(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[1]))
@@ -81,16 +119,38 @@ class DetailViewTest(TestCase):
 
     def test_detail_view_displays_fic_and_fic_part(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+        logger = logging.getLogger(__name__)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        logger.info("detail view display test")
+        # doesn't actually prove the user can see these elements
+        # but does prove they exist on the page
+        self.assertTrue(soup.find_all("div", class_="fic_meta"))
+        self.assertTrue(soup.find_all("article", class_="fic_part"))
 
     def test_detail_view_displays_fic_part_warning(self):
         resp = self.client.get(reverse('fanarchive:detail', args=[2]))
+        logger = logging.getLogger(__name__)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        logger.info("detail view warning display test")
+        self.assertTrue(soup.find_all("div", class_="fic_meta"))
+        self.assertTrue(soup.find_all("p", class_="fic_part warning"));
 
-
-    def test_detail_view_does_not_show_future_dated_parts(self):
-        pass
+    def test_detail_view_does_not_display_fic_part_warning(self):
+        resp = self.client.get(reverse('fanarchive:detail', args=[1]))
+        logger = logging.getLogger(__name__)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        logger.info("detail view no warning display test")
+        self.assertTrue(soup.find_all("div", class_="fic_meta"))
+        self.assertFalse(soup.find_all("p", class_="fic_part warning"));
 
     def test_detail_view_displays_fic_parts_in_order(self):
-        pass
+        resp = self.client.get(reverse('fanarchive:detail', args=[3]))
+        logger = logging.getLogger(__name__)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        logger.info("detail view order display test")
+        for x, part in enumerate(soup.find_all("article", class_="fic_part")):
+            # loop index starts at 0, fic part starts at 1
+            self.assertTrue("Part " + str(x+1) in str(part))
 
 
 class ErrorViewTest(TestCase):

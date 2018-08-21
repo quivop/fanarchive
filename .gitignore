@@ -112,3 +112,4 @@ dump/
 
 # Ignore collected static files
 staticfiles/
+*.sublime-workspace
