@@ -88,8 +88,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Adding ssl server for development
+    # Third party apps
     'sslserver',
+    'authtools',
     # Registering archive apps
     'fanfic',
     'users',
