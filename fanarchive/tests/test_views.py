@@ -5,6 +5,9 @@ from django.utils import timezone
 
 from fanarchive.models import Fic, FicPart
 
+from selenium import webdriver
+from django.test import LiveServerTestCase
+
 
 class UnitTestClient(Client):
     def get(self, *args, **kwargs):
@@ -115,11 +118,6 @@ class ErrorViewUnitTest(TestCase):
         self.assertTemplateUsed(resp, '404.html')
 
 
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from django.test import LiveServerTestCase
-
-
 class SeleniumTest(LiveServerTestCase):
 
     @classmethod
@@ -132,8 +130,7 @@ class SeleniumTest(LiveServerTestCase):
 
     @classmethod
     def tearDown(cls):
-        pass
-        # cls.browser.quit()
+        cls.browser.quit()
 
     def test_if_site_is_served_securely(self):
         self.browser.get(self.live_server_url)
