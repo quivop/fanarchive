@@ -17,3 +17,9 @@ class Pseud(models.Model):
 
     date_created = models.DateTimeField('date created',
                                         default=timezone.now)
+
+    def __str__(self):
+        """
+        Human-readable representation of a :model:`pseud.Pseud`.
+        """
+        return self.pseud_name
