@@ -3,24 +3,37 @@ from django.core.exceptions import ValidationError
 
 
 class FicPart(models.Model):
-    fic_part_title = models.CharField('fic part title', max_length=200)
+    """
+    Stores a single fic part (chapter, snippet, etc).
+    Related to :model:`fic.Fic`.
+    """
+
+    fic_part_title = models.CharField(
+        'fic part title', max_length=200)
     fic_part_text = models.TextField('fic part text')
 
     # One FicPart can have many Fics, but a FicPart can only have one Fic
-    fic = models.ForeignKey('Fic', on_delete=models.CASCADE)
+    fic = models.ForeignKey('Fic', on_delete=models.CASCADE,
+                            verbose_name='fic')
 
     # FicParts have part numbers
     fic_part_number = models.PositiveIntegerField(
         'fic part number', null=True)
 
     def __str__(self):
-        # returns title of the FicPart when called by __str__()
+        """
+        Human-readable representation of a :model:`fic_part.FicPart`.
+        """
         return self.fic_part_title
 
     def Meta(self):
         unique_together = ("fic", "fic_part_number") # noqa
 
     def save(self, *args, **kwargs):
+        """
+        Custom save function for FicParts. Automatically assigns a
+        fic_part_number to a new or updated FicPart as needed.
+        """
         if self.fic_part_number is None:
             fic_part_number = calc_fic_part_number(
                 fic_id=self.fic)
@@ -40,8 +53,14 @@ class FicPart(models.Model):
             super(FicPart, self).save(*args, **kwargs)
 
 
+# FicPart utility functions
+
 def calc_fic_part_number(fic_id, fic_part=None,
                          fic_part_number=None):
+    """
+    Calculates a fic_part_number for a new or updated FicPart.
+    """
+
     # grab existing fic part numbers for the Fic of this FicPart
     existing_part_numbers = FicPart.objects.filter(
         fic=fic_id)
