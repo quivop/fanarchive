@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class AuthorGroup(models.Model):
     authors = models.ManyToManyField(
         'pseuds.Pseud',
