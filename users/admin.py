@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-# Registering ArchiveUser
+# Registering User
 
-from .models import ArchiveUser
+from .models import User
 
-admin.site.register(ArchiveUser)
+admin.site.register(User)
