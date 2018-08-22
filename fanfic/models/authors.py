@@ -7,15 +7,16 @@ class AuthorGroup(models.Model):
         through='Authorship',
     )
 
-    # def __str__(self):
-    #     """
-    #     Human-readable representation of an AuthorGroup
-    #     """
-    #     author_list = self.get_author_list()
+    def __str__(self):
+        """
+        Human-readable representation of an AuthorGroup
+        """
+        author_list = self.get_authors()
+        author_string = ', '.join(str(a) for a in author_list)
 
-    #     list_length = len(author_list)
+        return author_string
 
-    def get_author_list(self):
+    def get_authors(self):
         author_list = self.authors.all()
         return author_list
 
@@ -28,10 +29,13 @@ class Authorship(models.Model):
         'Pseud',
         on_delete=models.CASCADE)
 
-#     def __str__(self):
-#         """
-#         Human-readable representation of an Authorship
-#         """
-#         return "{author} joined author \
-# group %{author_group}" % (self.author,
-#                           self.author_group)
+    def __str__(self):
+        """
+        Human-readable representation of an Authorship
+        """
+        author = str(self.author)
+        author_group = str(self.author_group)
+
+        authorship = "{} joined author group {}".format(author, author_group)
+
+        return authorship
