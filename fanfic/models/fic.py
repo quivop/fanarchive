@@ -5,7 +5,7 @@ from django.utils import timezone
 class Fic(models.Model):
     """
     Stores a single fanfic, related to :model:`fic_part.FicPart`
-    and :model:`author_related.AuthorGroup`.
+    and :model:`authors.AuthorGroup`.
     """
 
     # max_length only enforced at view level
