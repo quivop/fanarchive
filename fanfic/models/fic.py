@@ -14,7 +14,7 @@ class Fic(models.Model):
 
     # default both date fields to now
     pub_date = models.DateTimeField('date published', default=timezone.now)
-    date_updated = models.DateTimeField('date updated', default=timezone.now)
+    date_updated = models.DateTimeField('date updated', auto_now=True)
 
     fic_author_group = models.ForeignKey(
         'AuthorGroup', on_delete=models.CASCADE,

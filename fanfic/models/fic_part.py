@@ -18,7 +18,7 @@ class FicPart(models.Model):
                             verbose_name='fic')
 
     pub_date = models.DateTimeField('date published', default=timezone.now)
-    date_updated = models.DateTimeField('date updated', default=timezone.now)
+    date_updated = models.DateTimeField('date updated', auto_now=True)
 
     # FicParts have part numbers
     fic_part_number = models.PositiveIntegerField(
