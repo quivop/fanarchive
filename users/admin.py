@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+# Registering ArchiveUser
+
+from .models import ArchiveUser
+
+admin.site.register(ArchiveUser)
