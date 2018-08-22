@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 
 
 class Pseud(models.Model):
@@ -13,3 +14,5 @@ class Pseud(models.Model):
     pseud_owner = models.ForeignKey(
                                     settings.AUTH_USER_MODEL,
                                     on_delete=models.CASCADE)
+
+    date_created = models.DateTimeField('date created', default=timezone.now)
