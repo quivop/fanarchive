@@ -9,7 +9,7 @@
   <section class="latest_fic_list">
     {% for fic in latest_fic_list %}
     <article class="fic latest_fic_list">
-      <h3><a href="{% url 'fanarchive:detail' fic.id %}">{{ fic.fic_title }}</a></h3>
+      <h3><a href="{% url 'fanfic:detail' fic.id %}">{{ fic.fic_title }}</a></h3>
       <p>{{ fic.fic_summary }}</p>
       <div class="latest_fic_list meta">
         <p>posted {{ fic.pub_date|date }}</p>
@@ -23,8 +23,8 @@
 
   <p>My hero:</p>
   
-  <p><img src="{% static 'fanarchive/img/hero.jpg' %}" alt='image of THE HERO'/></p>
+  <p><img src="{% static 'fanfic/img/hero.jpg' %}" alt='image of THE HERO'/></p>
 
-  <p>Go to the <a href="{% url 'fanarchive:test' %}">TEST PAGE</a>!!</p>
+  <p>Go to the <a href="{% url 'fanfic:test' %}">TEST PAGE</a>!!</p>
 
 {% endblock content %}
