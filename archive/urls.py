@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.urls import path, include  # we need include, so add it here
 
 # Import RedirectView so redirecting our base url
-# to the fanarchive app will work
+# to the fanfic app will work
 from django.views.generic import RedirectView
 
 urlpatterns = [
