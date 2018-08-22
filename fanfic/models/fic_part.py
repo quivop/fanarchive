@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 
 class FicPart(models.Model):
@@ -15,6 +16,9 @@ class FicPart(models.Model):
     # One FicPart can have many Fics, but a FicPart can only have one Fic
     fic = models.ForeignKey('Fic', on_delete=models.CASCADE,
                             verbose_name='fic')
+
+    pub_date = models.DateTimeField('date published', default=timezone.now)
+    date_updated = models.DateTimeField('date updated', default=timezone.now)
 
     # FicParts have part numbers
     fic_part_number = models.PositiveIntegerField(
