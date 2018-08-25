@@ -6,6 +6,8 @@ class AuthorGroup(models.Model):
         'Pseud',
         through='Authorship',
     )
+    name = models.CharField('group name', max_length=100,
+                            unique=True, blank=True)
 
     def __str__(self):
         """
