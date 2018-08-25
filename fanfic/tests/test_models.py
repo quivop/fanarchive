@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from fanfic.models import Fic, FicPart
+from fanfic.models import AuthorGroup, Authorship, Fic, FicPart, Pseud
 from datetime import timedelta
 from django.utils import timezone
 
