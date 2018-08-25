@@ -32,8 +32,6 @@ class PseudGroup(models.Model):
 
     name = models.CharField('group name', max_length=100,
                             unique=True, blank=True)
-    authors = models.ForeignKey('PseudInstance', verbose_name='authors',
-                                on_delete=models.CASCADE)
 
     def __str__(self):
         """
@@ -61,6 +59,9 @@ class PseudInstance(models.Model):
 
     pseud = models.ForeignKey('Pseud', verbose_name='pseud',
                               on_delete=models.CASCADE)
+    pseud_group = models.ForeignKey(
+        'PseudGroup',
+        on_delete=models.CASCADE)
 
     def __str__(self):
         """
