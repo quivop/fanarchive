@@ -29,6 +29,9 @@ class Authorship(models.Model):
         'Pseud',
         on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = ("author_group", "author")
+
     def __str__(self):
         """
         Human-readable representation of an Authorship
