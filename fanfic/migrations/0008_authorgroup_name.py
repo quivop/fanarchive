@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='authorgroup',
             name='name',
-            field=models.CharField(blank=True, max_length=100, unique=True, verbose_name='group name'),
+            field=models.CharField(blank=True, max_length=100, null=True, unique=True, verbose_name='group name'),
         ),
     ]
