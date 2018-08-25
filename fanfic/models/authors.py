@@ -13,10 +13,13 @@ class AuthorGroup(models.Model):
         """
         Human-readable representation of an AuthorGroup
         """
-        author_list = self.get_authors()
-        author_string = ', '.join(str(a) for a in author_list)
+        if self.name:
+            return self.name
+        else:
+            author_list = self.get_authors()
+            author_string = ', '.join(str(a) for a in author_list)
 
-        return author_string
+            return author_string
 
     def get_authors(self):
         author_list = self.authors.all()
