@@ -86,4 +86,7 @@ class FicModelTest(TestCase):
 # test that fic with future pub_date posts properly
 # test that fic with past pub_date posts properly
 
-# test that fics are sorted by date in reverse order?
+# test calc_fic_part_number
+# test that fic parts are ordered correctly
+
+# test AuthorGroup & Authorship __str__ methods
