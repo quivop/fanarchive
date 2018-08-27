@@ -1,5 +1,6 @@
 dj-database-url==0.5.0
 Django==2.1
+django-authtools==1.6.0
 django-heroku==0.3.1
 django-sslserver==0.20
 gunicorn==19.7.1

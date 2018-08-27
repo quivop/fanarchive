@@ -81,18 +81,26 @@ ALLOWED_HOSTS = ['testserver', 'localhost', '127.0.0.1', ]
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Registering the Fanarchive app
-    'fanarchive.apps.FanarchiveConfig',
-    # Adding ssl server for development
-    'sslserver',
 ]
+
+THIRD_PARTY_APPS = [
+    'sslserver',
+    'authtools',
+]
+
+LOCAL_APPS = [
+    'fanfic',
+    'users',
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,6 +142,10 @@ DATABASES = {
     }
 }
 
+
+# Custom user model
+
+AUTH_USER_MODEL = 'users.User'
 
 # Password validation
 
