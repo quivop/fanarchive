@@ -3,7 +3,8 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from fanfic.models import Fic, FicPart
+from fanfic.models import AuthorGroup, Authorship, Fic, FicPart, Pseud
+from users.models import User
 
 from django.test.utils import override_settings
 
@@ -25,18 +26,37 @@ class MyTestCase(TestCase):
 
         super().tearDownClass()
 
-
-class IndexViewTest(MyTestCase):
-
     @classmethod
     def setUpTestData(cls):
-        # create a bunch of fics and fic parts
+        # Add user, pseud, author group, plus needed authorship
+        user_1 = User.objects.create(name='user',
+                                     email="user@example.com",
+                                     password='butts')
+        pseud_1 = Pseud.objects.create(pseud_name='pseud',
+                                       pseud_owner=user_1)
+        group_1 = AuthorGroup.objects.create()
+        Authorship.objects.create(author_group=group_1,
+                                  author=pseud_1)
+
+        # create a bunch of fics
         number_of_fics = 25
         for fic_num in range(number_of_fics):
             Fic.objects.create(
                 fic_title='Fic %s' % fic_num,
                 fic_summary='Butts',
+                fic_author_group=group_1,
                 pub_date=(timezone.now() - timedelta(days=fic_num)))
+
+        # create a bunch of fic parts for one fic
+        number_of_fic_parts = 6
+        for part_num in range(number_of_fic_parts):
+            FicPart.objects.create(
+                fic_id=1,
+                fic_part_title='Fic Part %s' % part_num,
+                pub_date=(timezone.now() - timedelta(days=part_num)))
+
+
+class IndexViewTest(MyTestCase):
 
     def test_view_url_exists_at_desired_location(self):
         resp = self.client.get('/archive/')
@@ -53,30 +73,6 @@ class IndexViewTest(MyTestCase):
 
 
 class DetailViewTest(MyTestCase):
-
-    @classmethod
-    def setUpTestData(cls):
-        # create a fic
-        Fic.objects.create(
-            fic_title="Butts",
-            fic_summary="more butts")
-        # create a fic part
-        FicPart.objects.create(
-            fic_part_title="butt beginnings",
-            fic_part_text="and so there was, in the beginning, a butt",
-            fic_id=1)
-        # create a fic with no parts
-        Fic.objects.create(
-            fic_title="Big bara tiddies",
-            fic_summary="better than butts")
-        # create a fic with future parts
-        Fic.objects.create(
-            fic_title="Back from the future",
-            fic_summary="Yes, I know we're in the past")
-        FicPart.objects.create(
-            fic_part_title="the future but not like too far",
-            fic_part_text="just like next week or something",
-            fic_id=3)
 
     def test_detail_view_url_exists_at_desired_location(self):
         resp = self.client.get(reverse('fanfic:detail', args=[1]))
@@ -100,16 +96,6 @@ class DetailViewTest(MyTestCase):
 
 
 class ErrorViewUnitTest(MyTestCase):
-
-    @classmethod
-    def setUpTestData(cls):
-        # create a bunch of fics and fic parts
-        number_of_fics = 3
-        for fic_num in range(number_of_fics):
-            Fic.objects.create(
-                fic_title='Fic %s' % fic_num,
-                fic_summary='Butts',
-                pub_date=(timezone.now() - timedelta(days=fic_num)))
 
     def test_if_404_error_is_handled_correctly(self):
         resp = self.client.get('/yay_404')
