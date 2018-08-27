@@ -29,10 +29,10 @@ class FicModelTest(TestCase):
             fic_part_text='No-o...')
 
     # Fic Tests
-    def test_object_name_is_fic_title(self):
+    def test_fic_name_is_fic_title(self):
         fic = Fic.objects.get(id=1)
-        expected_object_name = '%s' % (fic.fic_title)
-        self.assertEqual(expected_object_name, str(fic))
+        expected_name = '%s' % (fic.fic_title)
+        self.assertEqual(expected_name, str(fic))
 
     def test_pub_date_is_today(self):
         # also checks that a default date is being set at all
@@ -56,16 +56,16 @@ class FicModelTest(TestCase):
         else:
             self.assertTrue(delta.seconds < 86400, msg="date_updated is NOT today")
 
-    def test_fic_title_max_length(self):
-        fic = Fic.objects.get(id=1)
-        max_length = fic._meta.get_field('fic_title').max_length
-        self.assertEqual(max_length, 200)
-
     # FicPart tests
     def test_fic_part_is_related_to_correct_fic(self):
         fic_part = FicPart.objects.get(id=1)
         fic_id = fic_part.fic_id
         self.assertEqual(fic_id, 1)
+
+    def test_fic_part_name_is_fic_part_title(self):
+        fic_part = FicPart.objects.get(id=1)
+        expected_name = '%s' % (fic_part.fic_part_title)
+        self.assertEqual(expected_name, str(fic_part))
 
 
 # FUTURE TESTS #
