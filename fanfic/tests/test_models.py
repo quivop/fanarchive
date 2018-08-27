@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from fanfic.models import AuthorGroup, Authorship, Fic, FicPart, Pseud
+from users.models import User
 from datetime import timedelta
 from django.utils import timezone
 
@@ -11,15 +12,27 @@ class FicModelTest(TestCase):
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
         #
-        # Fic with default pub_date (fic1)
 
+        # Default user, pseud, author group, plus needed authorship
+        user_1 = User.objects.create(name='user',
+                                     email="user@example.com",
+                                     password='butts')
+        pseud_1 = Pseud.objects.create(pseud_name='pseud',
+                                       pseud_owner=user_1)
+        group_1 = AuthorGroup.objects.create()
+        Authorship.objects.create(author_group=group_1,
+                                  author=pseud_1)
+
+        # Fic with default pub_date (fic1)
         Fic.objects.create(
             fic_title='Ermagerd',
-            fic_summary="Really, erma freaking gard, they're sleeping together...",)
+            fic_summary="Really, erma freaking gard",
+            fic_author_group=group_1)
         # Fic with future pub_date (fic2)
         Fic.objects.create(
             fic_title='No really',
             fic_summary="What in the ACTUAL HELLO",
+            fic_author_group=group_1,
             pub_date=(timezone.now() + timedelta(days=1)),
             date_updated=(timezone.now() + timedelta(days=1)))
         # Fic part related to fic1 (fic_part1)
