@@ -14,3 +14,7 @@ class EditFicForm(forms.Form):
             raise ValidationError(_('Title is too long - fic title must be 200 characters or less in length'))
 
         return data
+
+
+class NewUserForm(forms.Form):
+    pass
