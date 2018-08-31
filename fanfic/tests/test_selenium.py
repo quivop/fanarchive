@@ -1,8 +1,9 @@
 from selenium import webdriver
-from django.test import LiveServerTestCase
+from django.test import LiveServerTestCase, tag
 from django.test.utils import override_settings
 
 
+@tag('selenium')
 class SeleniumTest(LiveServerTestCase):
     settings_mgr = override_settings(SECURE_SSL_REDIRECT=False,
                                      CSRF_COOKIE_SECURE=False,
