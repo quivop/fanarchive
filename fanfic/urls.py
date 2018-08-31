@@ -10,4 +10,5 @@ urlpatterns = [
     path('fic/<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('test/', views.TestView.as_view(), name='test'),
     path('admin/<int:pk>/edit/', views.FicEditingView, name='fic-editing-view'),
+    path('panel/', views.AdminIndexView.as_view(), name='panel'),
 ]
