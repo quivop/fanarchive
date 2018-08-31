@@ -2,6 +2,8 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
+from authtools.forms import CaseInsensitiveUsernameFieldCreationForm as CIUserCreationForm
+
 
 class EditFicForm(forms.Form):
     fic_title = forms.CharField(help_text="Enter a shiny new title for your fanfic (default is original title).")
@@ -16,5 +18,5 @@ class EditFicForm(forms.Form):
         return data
 
 
-class NewUserForm(forms.Form):
+class CreateUserForm(CIUserCreationForm):
     pass
