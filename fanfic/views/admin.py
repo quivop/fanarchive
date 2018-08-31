@@ -31,4 +31,4 @@ def FicEditingView(request, pk):
 
 
 class AdminIndexView(TemplateView):
-    template_name = 'fanfic/test.html' # noqa
+    template_name = 'admin/index.html' # noqa
