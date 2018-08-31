@@ -164,6 +164,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Authentication backends
+
+AUTHENTICATION_BACKENDS = [
+    'authtools.backends.CaseInsensitiveUsernameFieldModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Internationalization
 
