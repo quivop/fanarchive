@@ -1,14 +1,4 @@
 from django.db import models
-from django.conf import settings
-
-
-class AuthorProfile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
-    bio = models.TextField('author bio')
-
-
-def get_author_profile(user):
-    return user.authorprofile
 
 
 class AuthorGroup(models.Model):
