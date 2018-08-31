@@ -30,5 +30,5 @@ def FicEditingView(request, pk):
                    'fic_to_edit': fic_to_edit})
 
 
-class AdminIndexView(TemplateView):
-    template_name = 'admin/index.html' # noqa
+class MyPanel(TemplateView):
+    template_name = 'admin/my-index.html' # noqa
