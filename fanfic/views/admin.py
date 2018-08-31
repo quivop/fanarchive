@@ -25,10 +25,10 @@ def FicEditingView(request, pk):
         form = EditFicForm(initial={'fic_title': original_title})
 
     return render(request,
-                  'admin/fic-edit.html',
+                  'panel/fic-edit.html',
                   {'form': form,
                    'fic_to_edit': fic_to_edit})
 
 
 class MyPanel(TemplateView):
-    template_name = 'admin/my-index.html' # noqa
+    template_name = 'panel/index.html' # noqa
