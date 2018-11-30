@@ -2,6 +2,8 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
+from authtools.forms import CaseInsensitiveUsernameFieldCreationForm as CIUserCreationForm
+
 
 class EditFicForm(forms.Form):
     fic_title = forms.CharField(help_text="Enter a shiny new title for your fanfic (default is original title).")
@@ -14,3 +16,7 @@ class EditFicForm(forms.Form):
             raise ValidationError(_('Title is too long - fic title must be 200 characters or less in length'))
 
         return data
+
+
+class CreateUserForm(CIUserCreationForm):
+    pass

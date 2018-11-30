@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views.generic import TemplateView
 
 from fanfic.forms import EditFicForm
 from fanfic.models import Fic
@@ -24,6 +25,10 @@ def FicEditingView(request, pk):
         form = EditFicForm(initial={'fic_title': original_title})
 
     return render(request,
-                  'admin/fic-edit.html',
+                  'panel/fic-edit.html',
                   {'form': form,
                    'fic_to_edit': fic_to_edit})
+
+
+class MyPanel(TemplateView):
+    template_name = 'panel/index.html' # noqa
