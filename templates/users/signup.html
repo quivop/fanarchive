@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign Up | Fanarchive{% endblock title%}
+
+{% block content %}
+
+<h2>Sign up</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit!" />
+</form>
+
+{% endblock content %}
