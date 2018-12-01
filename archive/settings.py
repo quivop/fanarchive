@@ -147,6 +147,13 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'users.FicUser'
 
+# Login stuff
+
+LOGIN_REDIRECT_URL = 'fanfic:index'
+LOGIN_URL = 'users:login'
+LOGOUT_REDIRECT_URL = 'fanfic:index'
+
+
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [

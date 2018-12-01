@@ -3,10 +3,11 @@ from authtools.views import LoginView, LogoutView, PasswordChangeView, PasswordC
 
 from django.views.generic import RedirectView
 
+app_name = "users"
 urlpatterns = [
     path('login/', LoginView.as_view(template_name='users/login.html'), name='login'),
     path('', RedirectView.as_view(url='login/')),
-    path('logout/', LogoutView.as_view(template_name='users/logout.html')),
+    path('logout/', LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('password_change/', PasswordChangeView.as_view(template_name='users/password_change.html')),
     path('password_change/done/', PasswordChangeDoneView.as_view(template_name='users/password_change_done.html')),
     path('password_reset/', PasswordResetView.as_view(template_name='users/password_reset.html')),
