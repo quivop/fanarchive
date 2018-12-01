@@ -42,9 +42,10 @@
         <a class="" href="{% url 'fanfic:test' %}">Test page</a>
         <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
         {% if user.is_authenticated %}
-        <a class="" href="{% url 'users:logout' %}">Logout?</a>
+        <a class="" href="{% url 'users:logout' %}">Log out?</a>
         {% else %}
-        <a class="" href="{% url 'users:login' %}">Login</a>
+        <a class="" href="{% url 'users:signup' %}">Sign Up</a>
+        <a class="" href="{% url 'users:login' %}">Log In</a>
         {% endif %}
         {% endblock site_nav_links %}
       </nav>
