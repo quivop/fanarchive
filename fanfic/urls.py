@@ -13,5 +13,5 @@ urlpatterns = [
     path('test/', views.TestView.as_view(), name='test'),
     # path('admin/<int:pk>/edit/', views.FicEditingView, name='fic-editing-view'),
     path('panel/', views.MyPanel.as_view(), name='panel'),
-    path('auth/login/', AuthToolsLoginView, name='login'),
+    path('accounts/login/', AuthToolsLoginView.as_view(template_name='auth/login.html'), name='login'),
 ]
