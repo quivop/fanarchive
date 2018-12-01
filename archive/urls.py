@@ -14,7 +14,7 @@ urlpatterns = [
 
     # forward requests for 'archive/' links to urls.py
     # in the fanfic app
-    path('archive/', include('fanfic.urls')),
+    path('', include('fanfic.urls', namespace='fanfic')),
 
     # redirect the base url to the fanfic app
     path('', RedirectView.as_view(url='archive/')),
