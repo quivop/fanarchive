@@ -1,7 +1,10 @@
-from authtools.models import AbstractNamedUser
+from authtools.models import AbstractNamedUser, UserManager
 
-# Custom user model
+# Custom user manager and model
 
+class FicUserManager(UserManager):
+    pass
 
-class User(AbstractNamedUser):
+class FicUser(AbstractNamedUser):
+    objects = FicUserManager()
     pass
