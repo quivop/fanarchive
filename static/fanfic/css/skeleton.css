@@ -157,7 +157,7 @@ p {
 
 /* site title */
 
-#masthead h1 { 
+header h1 { 
   margin-top: .2em; 
   margin-bottom: .3em;
   font-family: "Gill Sans MT", "Futura", "Tw Cen MT", "Trebuchet MS", sans-serif; 
