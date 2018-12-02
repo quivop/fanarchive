@@ -157,20 +157,28 @@ p {
 
 /* site title */
 
+header {
+  background-color: #3f3255; /* c9b3f0, 4E3F6A */
+  color: #fefefe;
+}
+
 header h1 { 
   margin-top: .2em; 
   margin-bottom: .3em;
-  font-family: "Gill Sans MT", "Futura", "Tw Cen MT", "Trebuchet MS", sans-serif; 
-  text-transform: uppercase;
+  padding: .4em;
+  /*font-family: "Gill Sans MT", "Futura", "Tw Cen MT", "Trebuchet MS", sans-serif; */
+  text-transform: lowercase;
   font-size: 3rem;
 }
 
 /* userlinks */
 
 div#userlinks {
-  margin-top: .2em; 
-  margin-bottom: .3em;
+  padding: .5em;
 }
+
+div#userlinks a { color: #fefefe; }
+div#userlinks a:hover { color: #E8DEF8; }
 
 /* site navigation */
 
