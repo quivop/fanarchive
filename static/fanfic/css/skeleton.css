@@ -182,22 +182,30 @@ div#userlinks a:hover { color: #E8DEF8; }
 
 /* site navigation */
 
+nav#site_nav {
+  padding: 3px 0px;
+  background-color: #fdf9fd; 
+
+  border-bottom: 1px solid #6d5894;
+}
+
 #site_nav a {
-  padding: 2px 0px;
-  margin-bottom: .20rem; 
-  /*display: inline-block;*/
-  border: 1px solid #ccc;
+  padding: 5px;
+  /*margin-bottom: .20rem; */
+  display: inline-block;
+  /*border: 1px solid #ccc;*/
   box-sizing: border-box; 
 }
 
 #site_nav a:hover {
-  background-color: #f4f0ed;
+  background-color: #3f3255; /* f4f0ed, d4d3e5 */
+  color: #fefefe;
 }
 
 /* site nav -> larger than phablet */
 
 @media (min-width: 550px) {
-  #site_nav a { padding: 5px 20px; }
+  #site_nav a { /*padding: 5px 20px;*/ }
 }
 
 
@@ -247,9 +255,9 @@ article.fic_part {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #314CB6; } /* old: 0A81D1 */
 a:hover {
-  color: #0FA0CE; }
+  color: #860A2E; } /* old: 0FA0CE */
 
 
 /* Buttons
