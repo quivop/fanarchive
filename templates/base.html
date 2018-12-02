@@ -50,15 +50,17 @@
       </div>
       {% endblock userlinks %}
 
-      <nav id="site_nav">
-        {% block site_nav_links %}
-        <a class="" href="{% url 'fanfic:index' %}">Home</a>
-        <a class="" href="{% url 'fanfic:test' %}">Test page</a>
-        <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
-        
-        {% endblock site_nav_links %}
-      </nav>
+      
     </header>
+
+    <nav id="site_nav">
+      {% block site_nav_links %}
+      <a class="" href="{% url 'fanfic:index' %}">Home</a>
+      <a class="" href="{% url 'fanfic:test' %}">Test page</a>
+      <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
+      
+      {% endblock site_nav_links %}
+    </nav>
 
     <main id="content">
       {% block content %}
