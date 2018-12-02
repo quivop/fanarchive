@@ -31,27 +31,36 @@
     
   <div class="container">
 
-    <header id="site_title">
+    <header id="masthead">
       {% block sitetitle %}
       <h1>Fan Archive</h1>
       {% endblock sitetitle %}
+
+      {% block userlinks %}
+      <div id="userlinks">
+        <p>
+        {% if user.is_authenticated %}
+        Hi, {{ user.name }}! 
+        <a class="" href="{% url 'users:logout' %}">Log out?</a>
+        {% else %}
+        <a class="" href="{% url 'users:signup' %}">Sign Up</a>
+        <a class="" href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+      </p>
+      </div>
+      {% endblock userlinks %}
 
       <nav id="site_nav">
         {% block site_nav_links %}
         <a class="" href="{% url 'fanfic:index' %}">Home</a>
         <a class="" href="{% url 'fanfic:test' %}">Test page</a>
         <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
-        {% if user.is_authenticated %}
-        <a class="" href="{% url 'users:logout' %}">Log out?</a>
-        {% else %}
-        <a class="" href="{% url 'users:signup' %}">Sign Up</a>
-        <a class="" href="{% url 'users:login' %}">Log In</a>
-        {% endif %}
+        
         {% endblock site_nav_links %}
       </nav>
     </header>
 
-    <main>
+    <main id="content">
       {% block content %}
       <h2>Welcome!!</h2>
 
