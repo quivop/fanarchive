@@ -168,13 +168,12 @@ header, div#masthead h1 a {
 
 div#masthead h1 a { text-decoration: none; }
 
-header h1 { 
+div#masthead h1 { 
   margin-top: .2em; 
   margin-bottom: .3em;
   padding: .4em;
-  /*font-family: "Gill Sans MT", "Futura", "Tw Cen MT", "Trebuchet MS", sans-serif; */
   text-transform: lowercase;
-  font-size: 3rem;
+  font-size: 2.2rem;
 }
 
 /* userlinks */
@@ -195,7 +194,7 @@ nav#site_nav {
 }
 
 #site_nav a {
-  padding: 5px;
+  padding: 3px;
   /*margin-bottom: .20rem; */
   display: inline-block;
   /*border: 1px solid #ccc;*/
@@ -209,10 +208,11 @@ nav#site_nav {
   color: #E8DEF8;
 }
 
-/* site nav -> larger than phablet */
+/* masthead and site_nav -> larger than phablet */
 
 @media (min-width: 550px) {
-  #site_nav a { /*padding: 5px 20px;*/ }
+  #site_nav a { padding: 6px; }
+  div#masthead h1 { font-size: 3rem; }
 }
 
 
