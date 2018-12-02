@@ -187,9 +187,8 @@ div#userlinks a:hover { color: #E8DEF8; }
 /* site navigation */
 
 nav#site_nav {
-  padding: 3px 0px;
+  padding: 0px;
   background-color: #fdf9fd; 
-
   border-bottom: 1px solid #6d5894;
 }
 
@@ -199,11 +198,13 @@ nav#site_nav {
   display: inline-block;
   /*border: 1px solid #ccc;*/
   box-sizing: border-box; 
+  text-decoration: none;
+  color: #4e3f6a;
 }
 
 #site_nav a:hover {
   background-color: #3f3255; /* f4f0ed, d4d3e5 */
-  color: #fefefe;
+  color: #E8DEF8;
 }
 
 /* site nav -> larger than phablet */
