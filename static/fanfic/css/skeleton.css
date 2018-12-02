@@ -161,10 +161,12 @@ p {
 
 /* site title */
 
-header {
+header, div#masthead h1 a {
   background-color: #3f3255; /* c9b3f0, 4E3F6A */
   color: #fefefe;
 }
+
+div#masthead h1 a { text-decoration: none; }
 
 header h1 { 
   margin-top: .2em; 
@@ -202,7 +204,7 @@ nav#site_nav {
   color: #4e3f6a;
 }
 
-#site_nav a:hover {
+#site_nav a:hover, div#masthead h1 a:hover {
   background-color: #3f3255; /* f4f0ed, d4d3e5 */
   color: #E8DEF8;
 }
