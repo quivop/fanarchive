@@ -165,6 +165,13 @@ header h1 {
   font-size: 3rem;
 }
 
+/* userlinks */
+
+div#userlinks {
+  margin-top: .2em; 
+  margin-bottom: .3em;
+}
+
 /* site navigation */
 
 #site_nav a {

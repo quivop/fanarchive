@@ -31,11 +31,11 @@
     
   <div class="container">
 
-    <header>
-      <h1>Fan Archive</h1>
+    <header class="row">
+      <div id="masthead" class="nine columns"><h1>Fan Archive</h1></div>
 
       {% block userlinks %}
-      <div id="userlinks">
+      <div id="userlinks" class="u-pull-right">
         <p>
         {% if user.is_authenticated %}
         Hi, {{ user.name }}! 
