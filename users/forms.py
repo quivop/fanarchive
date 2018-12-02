@@ -7,9 +7,11 @@ class FicUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm):
         model = FicUser
+        fields = ('name', 'email')
 
 
 class FicUserChangeForm(UserChangeForm):
 
     class Meta:
         model = FicUser
+        fields = ('name', 'email')

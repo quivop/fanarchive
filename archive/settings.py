@@ -118,8 +118,8 @@ TEMPLATES = [
     # Django template engine's default settings
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': False,
         'OPTIONS': {'context_processors': [
             'django.template.context_processors.debug',
             'django.template.context_processors.request',
@@ -146,6 +146,13 @@ DATABASES = {
 # Custom user model
 
 AUTH_USER_MODEL = 'users.FicUser'
+
+# Login stuff
+
+LOGIN_REDIRECT_URL = 'fanfic:index'
+LOGIN_URL = 'users:login'
+LOGOUT_REDIRECT_URL = 'fanfic:index'
+
 
 # Password validation
 
