@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/pure-min.css?v=1.2' %}">
+{% endblock stylesheets %}
+
 {% block title %}HELL WELCOMES U{% endblock title%}
 
 {% block content %}
