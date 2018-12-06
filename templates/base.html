@@ -17,7 +17,7 @@
 
     {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/normalize.css?v=1' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/skeleton.css?v=1.1' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/skeleton.css?v=1.2' %}">
     {% endblock stylesheets %}
 
     {% block favicons %}
@@ -31,27 +31,35 @@
     
   <div class="container">
 
-    <header id="site_title">
-      {% block sitetitle %}
-      <h1>Fan Archive</h1>
-      {% endblock sitetitle %}
+    <header class="row">
+      <div id="masthead" class="nine columns"><h1><a class="" href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
 
-      <nav id="site_nav">
-        {% block site_nav_links %}
-        <a class="" href="{% url 'fanfic:index' %}">Home</a>
-        <a class="" href="{% url 'fanfic:test' %}">Test page</a>
-        <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
+      {% block userlinks %}
+      <div id="userlinks" class="u-pull-right">
+        <p>
         {% if user.is_authenticated %}
+        Hi, {{ user.name }}! 
         <a class="" href="{% url 'users:logout' %}">Log out?</a>
         {% else %}
         <a class="" href="{% url 'users:signup' %}">Sign Up</a>
         <a class="" href="{% url 'users:login' %}">Log In</a>
         {% endif %}
-        {% endblock site_nav_links %}
-      </nav>
+      </p>
+      </div>
+      {% endblock userlinks %}
+
+      
     </header>
 
-    <main>
+    <nav id="site_nav" class="row">
+      {% block site_nav_links %}
+      <a class="" href="{% url 'fanfic:test' %}">Test page</a>
+      <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
+      
+      {% endblock site_nav_links %}
+    </nav>
+
+    <main id="content">
       {% block content %}
       <h2>Welcome!!</h2>
 
