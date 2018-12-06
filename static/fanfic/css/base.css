@@ -1,0 +1,30 @@
+/*
+* Base stylesheet
+*
+*/
+
+/* Includes:
+--------------------------------------------------
+- basic grid styles
+- typography
+*/
+
+
+/* Grid 
+-------------------------------------------------- */
+
+.grid-box {
+  display: grid;
+}
+
+
+/* Typography 
+-------------------------------------------------- */
+
+body {
+  font-size: 1em;
+  line-height: 1.6em;
+  font-family: Georgia, serif;
+  color: #333;
+}
+
