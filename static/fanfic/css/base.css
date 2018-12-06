@@ -14,7 +14,17 @@
 -------------------------------------------------- */
 
 .grid-box {
+  position: relative;
   display: grid;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+.flex-box {
+  display: flex;
 }
 
 
@@ -23,7 +33,7 @@
 
 body {
   font-size: 1em;
-  line-height: 1.6em;
+  line-height: 1.5em;
   font-family: Georgia, serif;
   color: #333;
 }
