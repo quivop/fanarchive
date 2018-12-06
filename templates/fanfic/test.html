@@ -4,9 +4,12 @@
 {% block title %}TEST ME{% endblock title%}
 
 {% block stylesheets %}
-{{ block.super }}
-<!-- <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/normalize.css?v=1' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/pure-min.css?v=1.2' %}">
 {% endblock stylesheets %}
+
+{% block custom_style %}
+
+{% endblock custom_style %}
 
 {% block site_nav_links %}
   {{ block.super }}
