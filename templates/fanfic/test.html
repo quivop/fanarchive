@@ -1,98 +1,72 @@
-{% extends "base.html" %}
 {% load static %}
 
-{% block title %}TEST ME{% endblock title%}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/pure-min.css?v=1.2' %}">
-{% endblock stylesheets %}
+  <head>
 
-{% block custom_style %}
-.custom-wrapper {
-    background-color: #ffd390;
-    margin-bottom: 1em;
-    -webkit-font-smoothing: antialiased;
-    height: 2.1em;
-    overflow: hidden;
-    -webkit-transition: height 0.5s;
-    -moz-transition: height 0.5s;
-    -ms-transition: height 0.5s;
-    transition: height 0.5s;
-}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-.custom-wrapper.open {
-    height: 14em;
-}
+    <title>
+      {% block title %}BASE HELL
+      {% endblock title %}
 
-.custom-menu-3 {
-    text-align: right;
-}
+    </title>
 
-.custom-toggle {
-    width: 34px;
-    height: 34px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: none;
-}
+    {% block stylesheets %}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/normalize.css?v=1' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/pure-min.css?v=1.2' %}">
+    {% endblock stylesheets %}
 
-.custom-toggle .bar {
-    background-color: #777;
-    display: block;
-    width: 20px;
-    height: 2px;
-    border-radius: 100px;
-    position: absolute;
-    top: 18px;
-    right: 7px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
+    {% block favicons %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'fanfic/img/favicon.ico' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'fanfic/img/favicon-32x32.png' %}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{% static 'fanfic/img/favicon-16x16.png' %}" sizes="16x16" />
+    {% endblock favicons %}
 
-.custom-toggle .bar:first-child {
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-}
+    <style>
+    {% block custom_style %}
+    /* custom styles here */
+    {% endblock custom_style %}
+    </style>
 
-.custom-toggle.x .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
+  </head>
+  
+  <body>
+    
+  <div class="container">
 
-.custom-toggle.x .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
+    <header class="row">
+      <div id="masthead" class="nine columns"><h1><a class="" href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
 
-@media (max-width: 47.999em) {
+      {% block userlinks %}
+      <div id="userlinks" class="u-pull-right">
+        <p>
+        {% if user.is_authenticated %}
+        Hi, {{ user.name }}! 
+        <a class="" href="{% url 'users:logout' %}">Log out?</a>
+        {% else %}
+        <a class="" href="{% url 'users:signup' %}">Sign Up</a>
+        <a class="" href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+      </p>
+      </div>
+      {% endblock userlinks %}
 
-    .custom-menu-3 {
-        text-align: left;
-    }
+      
+    </header>
 
-    .custom-toggle {
-        display: block;
-    }
+    <nav id="site_nav" class="row">
+      {% block site_nav_links %}
+      <a class="" href="{% url 'fanfic:test' %}">Test page</a>
+      <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
+      <a class="" href="https://google.com">Gogol</a>
+      {% endblock site_nav_links %}
+    </nav>
 
-}
-{% endblock custom_style %}
-
-{% block site_nav_links %}
-  {{ block.super }}
-  <a href="https://www.google.com" title="go with google god">GO TO GOOGLE!!</a>
-{% endblock site_nav_links %}
-
-{% block content %}
-  <h1>{{ head1|title }}</h1>
+    <main id="content">
+        <h1>{{ head1|title }}</h1>
 
   {% lorem 2 p %}
 
@@ -128,4 +102,8 @@
   <h6>{{ head6|title }}</h6>
 
   {% lorem 2 p random %}
-{% endblock content %}
+    </main>
+  </div>
+
+  </body>
+</html>
