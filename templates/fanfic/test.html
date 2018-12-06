@@ -35,28 +35,25 @@
   
   <body>
 
-  <header class="pure-g">
-    <div class="pure-u-1"><h1><a class="" href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
+    <header class="">
+      <div class=""><h1><a class="" href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
 
-    {% block userlinks %}
-    <div id="userlinks" class="u-pull-right">
-      <p>
-      {% if user.is_authenticated %}
-      Hi, {{ user.name }}! 
-      <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
-      <a class="" href="{% url 'users:logout' %}">Log out?</a>
-      {% else %}
-      <a class="" href="{% url 'users:signup' %}">Sign Up</a>
-      <a class="" href="{% url 'users:login' %}">Log In</a>
-      {% endif %}
-    </p>
-    </div>
-    {% endblock userlinks %}
+      {% block userlinks %}
+      <div class="">
+        <p>
+        {% if user.is_authenticated %}
+        Hi, {{ user.name }}! 
+        <a class="" href="{% url 'users:logout' %}">Log out?</a>
+        {% else %}
+        <a class="" href="{% url 'users:signup' %}">Sign Up</a>
+        <a class="" href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+        </p>
+      </div>
+      {% endblock userlinks %}    
+    </header>
 
-    
-  </header>
-
-    <nav id="site_nav" class="row">
+    <nav class="">
       {% block site_nav_links %}
       <a class="" href="{% url 'fanfic:test' %}">Test page</a>
       <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
@@ -65,44 +62,46 @@
     </nav>
 
     <main id="content">
-        <h1>{{ head1|title }}</h1>
+      <h1>{{ head1|title }}</h1>
 
-  {% lorem 2 p %}
+      {% lorem 2 p %}
 
-  <p>A real test paragraph...</p>
+      <p>A real test paragraph...</p>
 
-  <ul><li>and here's a random</li>
-    <li>fuckin list!</li>
-    <li>with no paragraph tags in't</li></ul>
+      <ul>
+        <li>and here's a random</li>
+        <li>fuckin list!</li>
+        <li>with no paragraph tags in't</li>
+      </ul>
 
-  <ul><li>and here's a list</li>
-    <li><p>with paragraphs! in it!!</p></li>
-    <li><p>annnnd multi!</p>
-      <p>paragraphs!! baby!</p></li>
-    <li>one more list item just cos</li>
-  </ul>
+      <ul>
+        <li>and here's a list</li>
+        <li><p>with paragraphs! in it!!</p></li>
+        <li><p>annnnd multi!</p>
+          <p>paragraphs!! baby!</p></li>
+        <li>one more list item just cos</li>
+      </ul>
 
-  <h2>{{ head2|title }}</h2>
+      <h2>{{ head2|title }}</h2>
 
-  {% lorem 2 p random %}
+      {% lorem 2 p random %}
 
-  <h3>{{ head3|title }}</h3>
+      <h3>{{ head3|title }}</h3>
 
-  {% lorem 2 p random %}
+      {% lorem 2 p random %}
 
-  <h4>{{ head4|title }}</h4>
+      <h4>{{ head4|title }}</h4>
 
-  {% lorem 2 p random %}
+      {% lorem 2 p random %}
 
-  <h5>{{ head5|title }}</h5>
+      <h5>{{ head5|title }}</h5>
 
-  {% lorem 2 p random %}
+      {% lorem 2 p random %}
 
-  <h6>{{ head6|title }}</h6>
+      <h6>{{ head6|title }}</h6>
 
-  {% lorem 2 p random %}
+      {% lorem 2 p random %}
     </main>
-  </div>
 
   </body>
 </html>
