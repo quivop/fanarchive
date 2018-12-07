@@ -17,6 +17,10 @@
     {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/normalize.css?v=1' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/base.css?v=1.2' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/grid.css?v=1.2' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/layout.css?v=1.2' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/common.css?v=1.2' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/utilities.css?v=1.2' %}">
     {% endblock stylesheets %}
 
     {% block favicons %}
@@ -34,12 +38,12 @@
   </head>
   
   <body>
-    <div class="grid-box">
-      <header class="">
-        <div class=""><h1><a class="" href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
+    <div class="container">
+      <header class="row">
+        <div class="nine columns masthead"><h1><a href="{% url 'fanfic:index' %}">Fan Archive</a></h1></div>
 
         {% block userlinks %}
-        <div class="">
+        <div class="u-pull-right userlinks">
           <p>
           {% if user.is_authenticated %}
           Hi, {{ user.name }}! 
@@ -53,7 +57,7 @@
         {% endblock userlinks %}    
       </header>
 
-      <nav class="">
+      <nav class="row site_nav">
         {% block site_nav_links %}
         <a class="" href="{% url 'fanfic:test' %}">Test page</a>
         <a class="" href="{% url 'fanfic:panel' %}">Admin panel</a>
@@ -61,7 +65,7 @@
         {% endblock site_nav_links %}
       </nav>
 
-      <main id="content">
+      <main>
         <h1>{{ head1|title }}</h1>
 
         {% lorem 2 p %}

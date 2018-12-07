@@ -3,32 +3,21 @@
 *
 */
 
+
 /* Includes:
 --------------------------------------------------
-- basic grid styles
-- typography
+- basic typography, ie:
+  - headers
+  - links
+  - paragraphs
+  - lists
+  - code
+- styling for spacing
 */
 
 
-/* Grid 
--------------------------------------------------- */
 
-.grid-box {
-  position: relative;
-  display: grid;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1em;
-  box-sizing: border-box;
-}
-
-.flex-box {
-  display: flex;
-}
-
-
-/* Typography 
+/* Basic typography 
 -------------------------------------------------- */
 
 body {
@@ -37,4 +26,154 @@ body {
   font-family: Georgia, serif;
   color: #333;
 }
+p {
+  margin-top: 0;
+}
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1;
+}
 
+
+/* Headers
+--------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 { 
+  font-size: 3.4rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+  margin-top: .5em; 
+  margin-bottom: .2em;
+}
+h2 { 
+  font-size: 3.0rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
+  margin-top: .7em; 
+  margin-bottom: .2em;
+}
+h3 { 
+  font-size: 2.6rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+  margin-top: .9em; 
+  margin-bottom: .2em;
+}
+h4 { 
+  font-size: 2.2rem;
+  line-height: 1.35;
+  letter-spacing: -.08rem;
+  margin-top: 1.1em; 
+  margin-bottom: .2em;
+}
+h5 { 
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+  margin-top: 1.3em; 
+  margin-bottom: .2em;
+}
+h6 { 
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin-top: 1.5em;
+  margin-bottom: .2em;
+}
+
+
+/* Headers for larger-than-phablet screens */
+@media (min-width: 550px) {
+  h1 { font-size: 3.6rem; }
+  h2 { font-size: 3.2rem; }
+  h3 { font-size: 2.8rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 2.1rem; }
+  h6 { font-size: 1.6rem; }
+}
+
+
+/* Links 
+--------------------------------------------------*/
+
+a {
+  color: #314cb6;
+}
+
+a:hover {
+  color: #860a2e;
+}
+
+
+/* Lists
+-------------------------------------------------- */
+ul {
+  list-style: circle outside; }
+ol {
+  list-style: decimal outside; }
+ol, ul {
+  padding-left: 1.2em;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+-------------------------------------------------- */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Spacing and clearing
+-------------------------------------------------- */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+li p { margin-bottom: 1.5rem; }
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }

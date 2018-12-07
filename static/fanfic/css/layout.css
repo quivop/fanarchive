@@ -1,0 +1,100 @@
+/* Layout stylesheet
+--------------------------------------------------*/
+
+/* Styling for site title */
+header, .masthead h1 a {
+  background-color: #3f3255; /* c9b3f0, 4E3F6A */
+  color: #fefefe;
+}
+
+.masthead h1 a { text-decoration: none; }
+
+.masthead h1 { 
+  margin-top: .2em; 
+  margin-bottom: .3em;
+  padding: .4em;
+  text-transform: lowercase;
+  font-size: 2.2rem;
+}
+
+
+/* Styling for userlinks */
+.userlinks {
+  padding: .5em;
+}
+
+.userlinks a { color: #fefefe; }
+.userlinks a:hover { color: #E8DEF8; }
+
+
+/* Styling for site navigation */
+.site_nav {
+  padding: 0px;
+  background-color: #fdf9fd; 
+  border-bottom: 1px solid #6d5894;
+}
+
+.site_nav a {
+  padding: 3px;
+  /*margin-bottom: .20rem; */
+  display: inline-block;
+  /*border: 1px solid #ccc;*/
+  box-sizing: border-box; 
+  text-decoration: none;
+  color: #4e3f6a;
+}
+
+.site_nav a:hover, .masthead h1 a:hover {
+  background-color: #3f3255; /* f4f0ed, d4d3e5 */
+  color: #E8DEF8;
+}
+
+/* masthead and site_nav -> larger than phablet */
+@media (min-width: 550px) {
+  .site_nav a { padding: 6px; }
+  .masthead h1 { font-size: 3rem; }
+}
+
+
+
+/* Styling fic_meta */
+
+.fic_meta h2 { font-size: 3rem; padding-left: 10px }
+.fic_meta ul { padding: 5px 10px; }
+.fic_meta ul li { list-style-type: none; }
+div.fic_meta {
+  border: 1px dotted #ccc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Styling fic_part */
+article.fic_part {
+
+}
+.fic_part h3 { font-size: 2.4rem; }
+.fic_part.warning {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  display: inline-block;
+  padding: 2px 5px;
+  margin-bottom: .20rem;
+}
+
+
+/* Styling for latest_fic_list */
+.latest_fic_list.fic {
+  border: 1px dotted #ccc;
+  padding: .5em;
+  margin-bottom: .8em;
+}
+.latest_fic_list.meta p {
+  color: #666;
+}
+.latest_fic_list.fic p { margin-bottom: .8rem; }
+.latest_fic_list.fic h3 {
+  font-family: "Helvetica Neue", Arial, serif;
+  font-size: 1.8rem;
+  margin-top: 0;
+  letter-spacing: -.05rem;
+}
