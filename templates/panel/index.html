@@ -17,14 +17,14 @@ admin
 
 {% block content %}
 <h2>Admin panel</h2>
-<div class="row">
+<div class="twelve columns">
 
   {% if user.is_authenticated %}
-  <div class="three columns" style="border: 1px dotted grey;">
+  <div class="three columns admin-greetings">
     <p>Hi, {{ user.name }}!</p>
   </div>
 
-  <div class="nine columns quicklinks" style="border: 1px dotted red;">
+  <div class="admin-quicklinks u-pull-right">
     <ul class="">
       <li><a class="" href="{% url 'users:password_change' %}">Change password</a></li>
       <li><a>Edit pseuds</a></li>
@@ -33,10 +33,11 @@ admin
     </ul>
   </div>
 
-  <hr class="twelve columns">
+  <!-- <hr class="twelve columns"> -->
 
   <div class="row">
-    <div class="four columns admin-user-card">
+    <div class="row">
+    <div class="six columns admin-user-card">
       <h3>Users</h3>
       <ul>
         <li>User a</li>
@@ -44,20 +45,21 @@ admin
       </ul>
     </div>
 
-    <div class="four columns admin-pseud-card">
+    <div class="six columns admin-pseud-card">
       <h3>Pseuds</h3>
       <ul>
         <li>Pseud a</li>
         <li>Pseud b</li>
       </ul>
     </div>
+  </div>
 
-    <div class="four columns admin-fic-card">
-      <h3>Fics</h3>
-      <ul>
-        <li>Fic a</li>
-        <li>Fic b</li>
-      </ul>
+    <div class="twelve columns admin-fic-card">
+        <h3>Fics</h3>
+        <ul>
+          <li>Fic a</li>
+          <li>Fic b</li>
+        </ul>
     </div>
   </div>
     

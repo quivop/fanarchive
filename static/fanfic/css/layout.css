@@ -112,16 +112,36 @@ article.fic_part {
 .admin h5 { font-size: 1.6rem; }
 .admin h6 { font-size: 1.4rem; }
 
-.quicklinks ul {
+.admin-quicklinks ul {
   list-style: none;
-  padding-left: 5px;
+  padding-left: 0;
 }
 
-.quicklinks ul li {
+.admin-quicklinks ul li {
   display: inline;
-  padding-left: 5px 10px;
+  padding-right: 10px;
 }
 
-.admin-user-card ul {  }
-.admin-pseud-card ul {  }
-.admin-fic-card ul {  }
+.admin-quicklinks ul li::before {
+  content: "\200B";
+}
+
+.admin-user-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+.admin-pseud-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+.admin-fic-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+
+.admin-greetings p, .admin-quicklinks ul {
+  margin-bottom: 1rem;
+}
