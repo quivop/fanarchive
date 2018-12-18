@@ -1,7 +1,7 @@
 from .forms import FicUserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from authtools.views import PasswordResetView
+from authtools.views import PasswordResetView, PasswordResetConfirmView
 
 
 class SignUp(CreateView):
@@ -16,3 +16,8 @@ class ResetView(PasswordResetView):
     email_template_name = 'users/password_reset_email_txt.html'
     html_email_template_name = 'users/password_reset_email_ht.html'
     success_url = reverse_lazy('users:password_reset_done')
+
+
+class ResetConfirmView(PasswordResetConfirmView):
+    template_name = 'users/password_reset_confirm.html'
+    success_url = reverse_lazy('users:password_reset_complete')
