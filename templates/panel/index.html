@@ -4,22 +4,38 @@
 {% block title %}Admin Panel{% endblock title%}
 
 {% block site_nav_links %}
-  {{ block.super }}
-  
+  <a class="" href="{% url 'fanfic:panel' %}">Admin Home</a>
 {% endblock site_nav_links %}
+
+{% block masthead %}
+  {{ block.super }} : admin
+{% endblock masthead %}
+
+{% block mainclass %}
+admin
+{% endblock mainclass %}
 
 {% block content %}
 <h2>Admin panel</h2>
+<div class="row">
 
-{% if user.is_authenticated %}
-<p>Hi, {{ user.name }}!</p>
+  {% if user.is_authenticated %}
+  <div class="three columns" style="border: 1px dotted grey;">
+    <p>Hi, {{ user.name }}!</p>
+  </div>
 
-<p>Here, you can:</p>
-<ul>
-  <li><a class="" href="{% url 'users:password_change' %}">Change your password</a></li>
-  <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
-</ul>
-{% else %}
-<p>You need to <a class="" href="{% url 'users:login' %}">log in</a> to access the admin panel.</p>
-{% endif %}
+  <div class="nine columns" style="border: 1px dotted red;">
+    <p><a class="" href="{% url 'users:password_change' %}">Change password</a></p>
+  </div>
+
+  <p>Here, you can:</p>
+  <ul>
+    <li><a class="" href="{% url 'users:password_change' %}">Change your password</a></li>
+    <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
+  </ul>
+  {% else %}
+  <p>You need to <a class="" href="{% url 'users:login' %}">log in</a> to access the admin panel.</p>
+  {% endif %}
+
+</div>
 {% endblock content %}
