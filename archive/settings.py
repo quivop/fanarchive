@@ -153,6 +153,11 @@ LOGIN_REDIRECT_URL = 'fanfic:index'
 LOGIN_URL = 'users:login'
 LOGOUT_REDIRECT_URL = 'fanfic:index'
 
+# Email config for testing
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
 
 # Password validation
 
