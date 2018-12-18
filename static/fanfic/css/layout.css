@@ -98,3 +98,12 @@ article.fic_part {
   margin-top: 0;
   letter-spacing: -.05rem;
 }
+
+
+/* Styling for admin panel */
+
+.admin h2 { font-size: 2.4rem; }
+.admin h3 { font-size: 2.0rem; }
+.admin h4 { font-size: 1.8rem; }
+.admin h5 { font-size: 1.6rem; }
+.admin h6 { font-size: 1.4rem; }
