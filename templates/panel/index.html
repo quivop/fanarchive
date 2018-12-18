@@ -29,13 +29,38 @@ admin
       <li><a class="" href="{% url 'users:password_change' %}">Change password</a></li>
       <li><a>Edit pseuds</a></li>
       <li><a>Edit fics</a></li>
+      <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
     </ul>
   </div>
 
-  <p>Here, you can:</p>
-  <ul>
-    <li><a class="" href="{% url 'users:password_change' %}">Change your password</a></li>
-    <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
+  <hr class="twelve columns">
+
+  <div class="row">
+    <div class="four columns admin-user-card">
+      <h3>Users</h3>
+      <ul>
+        <li>User a</li>
+        <li>User b</li>
+      </ul>
+    </div>
+
+    <div class="four columns admin-pseud-card">
+      <h3>Pseuds</h3>
+      <ul>
+        <li>Pseud a</li>
+        <li>Pseud b</li>
+      </ul>
+    </div>
+
+    <div class="four columns admin-fic-card">
+      <h3>Fics</h3>
+      <ul>
+        <li>Fic a</li>
+        <li>Fic b</li>
+      </ul>
+    </div>
+  </div>
+    
   </ul>
   {% else %}
   <p>You need to <a class="" href="{% url 'users:login' %}">log in</a> to access the admin panel.</p>
