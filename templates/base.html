@@ -44,7 +44,9 @@
       <header class="row">
         <div class="nine columns masthead">
           <h1>
+            {% block masthead %}
             <a class="" href="{% url 'fanfic:index' %}">Fan Archive</a>
+            {% endblock masthead %}
           </h1>
         </div>
 
