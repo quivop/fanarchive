@@ -24,8 +24,12 @@ admin
     <p>Hi, {{ user.name }}!</p>
   </div>
 
-  <div class="nine columns" style="border: 1px dotted red;">
-    <p><a class="" href="{% url 'users:password_change' %}">Change password</a></p>
+  <div class="nine columns quicklinks" style="border: 1px dotted red;">
+    <ul class="">
+      <li><a class="" href="{% url 'users:password_change' %}">Change password</a></li>
+      <li><a>Edit pseuds</a></li>
+      <li><a>Edit fics</a></li>
+    </ul>
   </div>
 
   <p>Here, you can:</p>
