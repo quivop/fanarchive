@@ -5,10 +5,21 @@
 
 {% block site_nav_links %}
   {{ block.super }}
-  <a class="" href="google.com">Sekrit Admin Link</a>
+  
 {% endblock site_nav_links %}
 
 {% block content %}
-<h2>Admin panel??</h2>
-<p>An admin panel will be along shortly.</p>
+<h2>Admin panel</h2>
+
+{% if user.is_authenticated %}
+<p>Hi, {{ user.name }}!</p>
+
+<p>Here, you can:</p>
+<ul>
+  <li><a class="" href="{% url 'users:password_change' %}">Change your password</a></li>
+  <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
+</ul>
+{% else %}
+<p>You need to <a class="" href="{% url 'users:login' %}">log in</a> to access the admin panel.</p>
+{% endif %}
 {% endblock content %}
