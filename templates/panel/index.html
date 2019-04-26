@@ -4,11 +4,69 @@
 {% block title %}Admin Panel{% endblock title%}
 
 {% block site_nav_links %}
-  {{ block.super }}
-  <a class="" href="google.com">Sekrit Admin Link</a>
+  <a class="" href="{% url 'fanfic:panel' %}">Admin Home</a>
 {% endblock site_nav_links %}
 
+{% block masthead %}
+  {{ block.super }} : admin
+{% endblock masthead %}
+
+{% block mainclass %}
+admin
+{% endblock mainclass %}
+
 {% block content %}
-<h2>Admin panel??</h2>
-<p>An admin panel will be along shortly.</p>
+<h2>Admin panel</h2>
+<div class="twelve columns">
+
+  {% if user.is_authenticated %}
+  <div class="three columns admin-greetings">
+    <p>Hi, {{ user.name }}!</p>
+  </div>
+
+  <div class="admin-quicklinks u-pull-right">
+    <ul class="">
+      <li><a class="" href="{% url 'users:password_change' %}">Change password</a></li>
+      <li><a>Edit pseuds</a></li>
+      <li><a>Edit fics</a></li>
+      <li><a class="" href="{% url 'fanfic:newfic' %}">Add a new fic</a></li>
+    </ul>
+  </div>
+
+  <!-- <hr class="twelve columns"> -->
+
+  <div class="row">
+    <div class="row">
+    <div class="six columns admin-user-card">
+      <h3>Users</h3>
+      <ul>
+        <li>User a</li>
+        <li>User b</li>
+      </ul>
+    </div>
+
+    <div class="six columns admin-pseud-card">
+      <h3>Pseuds</h3>
+      <ul>
+        <li>Pseud a</li>
+        <li>Pseud b</li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="twelve columns admin-fic-card">
+        <h3>Fics</h3>
+        <ul>
+          <li>Fic a</li>
+          <li>Fic b</li>
+        </ul>
+    </div>
+  </div>
+    
+  </ul>
+  {% else %}
+  <p>You need to <a class="" href="{% url 'users:login' %}">log in</a> to access the admin panel.</p>
+  {% endif %}
+
+</div>
 {% endblock content %}

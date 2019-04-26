@@ -98,3 +98,50 @@ article.fic_part {
   margin-top: 0;
   letter-spacing: -.05rem;
 }
+
+
+/* Styling for admin panel */
+
+.admin h2, h3, h4, h5, h6 {
+  font-variant: small-caps; 
+}
+
+.admin h2 { font-size: 2.2rem; }
+.admin h3 { font-size: 2.0rem; }
+.admin h4 { font-size: 1.8rem; }
+.admin h5 { font-size: 1.6rem; }
+.admin h6 { font-size: 1.4rem; }
+
+.admin-quicklinks ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.admin-quicklinks ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.admin-quicklinks ul li::before {
+  content: "\200B";
+}
+
+.admin-user-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+.admin-pseud-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+.admin-fic-card { 
+  border: 1px dotted blue; 
+  padding: 5px;
+  margin: 5px;
+}
+
+.admin-greetings p, .admin-quicklinks ul {
+  margin-bottom: 1rem;
+}

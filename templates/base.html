@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/normalize.css?v=1' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/base.css?v=1.1' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/grid.css?v=1.2' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/layout.css?v=1.2' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/layout.css?v=1.1' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/common.css?v=1.2' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fanfic/css/utilities.css?v=1.2' %}">
     {% endblock stylesheets %}
@@ -44,7 +44,9 @@
       <header class="row">
         <div class="nine columns masthead">
           <h1>
+            {% block masthead %}
             <a class="" href="{% url 'fanfic:index' %}">Fan Archive</a>
+            {% endblock masthead %}
           </h1>
         </div>
 
@@ -70,7 +72,7 @@
         {% endblock site_nav_links %}
       </nav>
 
-    <main>
+    <main class="row {% block mainclass %}{% endblock %}">
       {% block content %}
       <h2>Welcome!!</h2>
 

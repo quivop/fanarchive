@@ -12,4 +12,5 @@ urlpatterns = [
     path('test/', views.TestView.as_view(), name='test'),
     # path('admin/<int:pk>/edit/', views.FicEditingView, name='fic-editing-view'),
     path('panel/', views.MyPanel.as_view(), name='panel'),
+    path('panel/new/fic/', views.TestView.as_view(), name='newfic')
 ]
