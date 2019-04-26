@@ -114,3 +114,6 @@ staticfiles/
 # Ignore sublime project files
 *.sublime-project
 *.sublime-workspace
+
+# Ignore run script for NFSN
+*dj.sh
