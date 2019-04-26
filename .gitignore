@@ -110,3 +110,7 @@ dump/
 
 # Ignore collected static files
 staticfiles/
+
+# Ignore sublime project files
+*.sublime-project
+*.sublime-workspace
